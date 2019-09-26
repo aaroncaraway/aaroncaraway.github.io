@@ -1,5 +1,9 @@
+---
 layout: archive
 permalink: /machine-learning/
+---
+
+# Machine Learning
 
 {% include base_path %}
 {% include group-by-array collection=site.posts field="tags" %}
