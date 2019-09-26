@@ -1,6 +1,6 @@
 title: "About"
 permalink:/about/
 header:
-image:
+image: "/images/dance.jpg"
 
 # About page!
