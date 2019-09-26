@@ -5,6 +5,8 @@ permalink: /machine-learning/
 
 # Machine Learning
 
+## This is a page!
+
 {% include group-by-array collection=site.posts field="tags" %}
 
 {% for tag in group_names %}
