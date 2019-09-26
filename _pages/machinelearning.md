@@ -1,5 +1,6 @@
 layout: archive
-permalink: /machine-learning
+permalink: /machine-learning/
+
 {% include base_path %}
 {% include group-by-array collection=site.posts field="tags" %}
 
