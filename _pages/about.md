@@ -1,8 +1,6 @@
 ---
-title: "About"
-permalink:/about/
-header:
-  image: "/images/dance.jpg"
+layout: archive
+permalink: /python/
 ---
 
-## This is an about page!
+Hi! I'm Aaron. I love coding and skyrim. 
