@@ -16,7 +16,7 @@ minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale: "en-US"
-title: "TEST PORTFOLIO PLZ IGNORE"
+title: "Things I've built, broken and learned"
 title_separator: "-"
 subtitle: # site tagline that appears below site title in masthead
 name: "Aaron Caraway"

@@ -2,10 +2,12 @@
 main:
   - title: "About"
     url: /me/
-  - title: "Data Science"
-    url: /data-science/
+  # - title: "Data Science"
+  #   url: /data-science/
   - title: "Python"
     url: /python/
+  - title: "Projects"
+    url: /projects/
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
