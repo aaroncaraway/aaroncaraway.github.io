@@ -1,6 +1,8 @@
+---
 title: "About"
 permalink:/about/
 header:
-image: "/images/dance.jpg"
+  image: "/images/dance.jpg"
+---
 
-# About page!
+## This is an about page!
