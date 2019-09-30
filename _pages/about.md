@@ -1,6 +1,6 @@
 ---
 layout: archive
-permalink: /python/
+permalink: /about/
 ---
 
 Hi! I'm Aaron. I love coding and skyrim. 
