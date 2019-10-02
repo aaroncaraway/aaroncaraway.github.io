@@ -4,6 +4,8 @@ permalink: /starting/
 title: 'Starting from the Bottom'
 ---
 
+When using AWS from a new user, don't forget to [create a new access key](https://help.bittitan.com/hc/en-us/articles/115008255268-How-do-I-find-my-AWS-Access-Key-and-Secret-Access-Key-)
+
 ```console
 $ pip3 install --upgrade pip
 $ pip3 install jupyter 
