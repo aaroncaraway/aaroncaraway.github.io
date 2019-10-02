@@ -8,6 +8,8 @@ main:
     url: /python/
   - title: "Projects"
     url: /projects/
+  - title: "Starting"
+    url: /starting/
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
