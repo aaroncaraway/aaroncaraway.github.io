@@ -47,5 +47,10 @@ But then I got overwhelmed and had to bike and shower and meditate and now we're
 
 I WISH I WAS LESS DISTRACTED doot doot doot!!
 
+## FILE UPLOADS
+[Using this tutorial](https://medium.com/@khelif96/uploading-files-from-a-react-app-to-aws-s3-the-right-way-541dd6be689)
 
+Two apps going right now -- 
+(1) FRONTEND: the react app that works with a json file  `browser-journal`
+(2) BACKEND: the express server on aws that is in progress `node-express`
 
