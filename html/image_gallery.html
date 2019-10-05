@@ -1,0 +1,108 @@
+<!-- https://codepen.io/anon/pen/QzGEwz -->
+<html>
+
+<head>
+  <style>
+    body {
+      background-color: #fff;
+      color: #000;
+    }
+    .container {
+      width: 1000px;
+      margin: 0 auto;
+      border: 4px solid #ccc;
+    }
+    .mainImage {
+      border: 2px solid blue;
+    }
+    .imageSlider {
+      border: 2px solid red;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="mainImage"><img /></div>
+    <div class="imageSlider"></div>
+  </div>
+  
+  <h1>Image Slider</h1>
+  <img src="https://amazingslider.com/wp-content/uploads/2012/12/demo12.jpg" />
+  <p>
+    Please create an image slider with the images below. You can use vanilla
+    js, jquery, react or angular. <br />
+    The slider should have thumbnails with the small images. When a user
+    clicks a thumbnail, the large image should be displayed. By default show
+    Photo #1. Please show a title over the image as well. <br />
+    additionaly, there should be a previous and next links that will display
+    the next image. If you reached the last image, the next button should show
+    the first (loop). Good Luck!
+  </p>
+  <script type="text/javascript">
+
+// for (i = 0, len = cars.length, text = ""; i < len; i++) {
+//   text += cars[i] + "<br>";
+// }
+
+    const images = [
+      {
+        title: 'Photo #1',
+        small: 'https://via.placeholder.com/100x100/e5fcc2?text=image1',
+        large: 'https://via.placeholder.com/600x400/e5fcc2?text=image1',
+      },
+      {
+        title: 'Photo #2',
+        small: 'https://via.placeholder.com/100x100/9de0ad?text=image2',
+        large: 'https://via.placeholder.com/600x400/9de0ad?text=image2',
+      },
+      {
+        title: 'Photo #3',
+        small: 'https://via.placeholder.com/100x100/45ada8?text=image3',
+        large: 'https://via.placeholder.com/600x400/45ada8?text=image3',
+      },
+      {
+        title: 'Photo #4',
+        small: 'https://via.placeholder.com/100x100/547980?text=image4',
+        large: 'https://via.placeholder.com/600x400/547980?text=image4',
+      },
+      {
+        title: 'Photo #5',
+        small: 'https://via.placeholder.com/100x100/594f4f?text=image5',
+        large: 'https://via.placeholder.com/600x400/594f4f?text=image5',
+      },
+    ];
+
+    function next(currentImage){
+      console.log(document.querySelector('.mainImage img'))
+    }
+
+    function doTheThing(largeImage){
+      console.log(largeImage)
+      console.log('I LOVE CATS!!!')
+      // var img = document.createElement("img");   // Create a <button> element
+      // img.src = largeImage.large;
+      // var title = document.createElement("div");  
+      // title.innerHTML = largeImage.title;     
+      // img.onclick = doTheThing;
+      document.querySelector('.mainImage img').src = largeImage.large;
+      // document.querySelector('.mainImage').appendChild(title);
+    }
+
+    function loopThroughImages(images){
+      for (let i = 0, len = images.length; i < len; i++) {
+        console.log(images[i])
+        var img = document.createElement("img");   // Create a <button> element
+        img.src = images[i]['small'];        
+        img.onclick = () => doTheThing(images[i]);
+        document.querySelector('.imageSlider').appendChild(img);  
+      }
+    }
+
+    doTheThing(images[0])
+    loopThroughImages(images)
+
+  </script>
+</body>
+</html>
