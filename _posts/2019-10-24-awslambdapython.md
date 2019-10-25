@@ -21,3 +21,5 @@ cd $OLDPWD
 
 RESOURCES
 [http from lambda](https://stackoverflow.com/questions/40136746/aws-lambda-sending-http-request)
+
+[payload lambda](https://jun711.github.io/aws/handling-aws-api-gateway-and-lambda-413-error/)
