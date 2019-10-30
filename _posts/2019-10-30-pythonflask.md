@@ -51,7 +51,7 @@ def index():
     return render_template('index.html')
 ```
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +68,8 @@ def index():
 
 7. Add `base.html`
 
-```
+{% raw %}
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,10 +84,12 @@ def index():
 </body>
 </html>
 ```
+{% endraw %}
 
 7b. Update `index.html`
 
-```
+{% raw %}
+```html
 {% extends 'base.html' %}
 
 {% block head %}
@@ -97,6 +100,7 @@ def index():
 
 {% endblock %}
 ```
+{% endraw %}
 
 8. Make a css file and folder within `static` -- `static/css/main.css`
 
@@ -117,9 +121,12 @@ from flask import Flask, render_template, url_for
 
 9b. Add link to `base.html`
 
-```
+{% raw %}
+```html
 <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 ```
+{% endraw %}
+
 ## ADD DATABASE
 
 10. Database time!
@@ -174,11 +181,8 @@ from datetime import datetime
 12a. Make sure you are still in virtual environment
 ```console
 python3
-```
-
-```console
-from app import db
-db.create_all()
+>> from app import db
+>> db.create_all()
 ```
 
 13. Add methods to routes 
@@ -197,7 +201,7 @@ if __name__ == "__main__":
 
 14. Add actions to `index.html`
 
-```
+```html
     <form actions="/" method="POST">
         <input type="text" name="content" id="content">
         <input type="submit" value="Add Task">
@@ -274,7 +278,8 @@ def index():
 
 18. Add more `Jinja` to index.html so we can view all of our tasks with this fun for-loop!
 
-```
+{% raw %}
+```html
     <h1>Task Master</h1>
     <table>
         <tr>
@@ -296,6 +301,7 @@ def index():
     </table>
 
 ```
+{% endraw %}
 
 19. Add delete route (& function!) to `app.py`
 
@@ -315,7 +321,8 @@ def delete(id):
 
 20. Add route to html, and while we're there, add the update route!
 
-```
+{% raw %}
+```html
         {% for task in tasks%}
             <tr>
                 <td>{{ task.content }}</td>
@@ -328,11 +335,13 @@ def delete(id):
             </tr>
         {% endfor %}
 ```
+{% endraw %}
 
 21. Add update template `update.html`
 (pretty much copied from `index.html` with the table removed)
 
-```
+```html
+{% raw %}
 {% extends 'base.html' %}
 
 {% block head %}
@@ -354,6 +363,7 @@ def delete(id):
 
 {% endblock %}
 ```
+{% endraw %}
 
 22. Add update route (& function!) to `app.py`
 
@@ -376,16 +386,18 @@ def update(id):
 ```
 
 23. Update the update form
-```
+{% raw %}
+```html
     <form actions="/update/{{ task.id }}" method="POST">
         <input type="text" name="content" id="content" value="{{ task.content }}">
         <input type="submit" value="Update">
     </form>
 ```
+{% endraw %}
 
 24. Add `if` statement to `index.html` to account for no tasks
-
-```
+{% raw %}
+```html
     <h1>Task Master</h1>
     {% if tasks|length < 1 %}
         <h4>There are no tasks. Create one below!</h4>
@@ -410,6 +422,8 @@ def update(id):
     </table>
     {% endif %}
 ```
+{% endraw %}
+
 ## PUSH IT LIVE!!
 
 25. Sign up for / sign in to Heroku
