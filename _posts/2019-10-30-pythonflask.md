@@ -51,7 +51,7 @@ def index():
     return render_template('index.html')
 ```
 
-```html
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +68,7 @@ def index():
 
 7. Add `base.html`
 
-```html
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +86,7 @@ def index():
 
 7b. Update `index.html`
 
-```html
+```
 {% extends 'base.html' %}
 
 {% block head %}
@@ -117,7 +117,7 @@ from flask import Flask, render_template, url_for
 
 9b. Add link to `base.html`
 
-```html
+```
 <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 ```
 ## ADD DATABASE
@@ -197,7 +197,7 @@ if __name__ == "__main__":
 
 14. Add actions to `index.html`
 
-```html
+```
     <form actions="/" method="POST">
         <input type="text" name="content" id="content">
         <input type="submit" value="Add Task">
@@ -274,7 +274,7 @@ def index():
 
 18. Add more `Jinja` to index.html so we can view all of our tasks with this fun for-loop!
 
-```html
+```
     <h1>Task Master</h1>
     <table>
         <tr>
@@ -315,7 +315,7 @@ def delete(id):
 
 20. Add route to html, and while we're there, add the update route!
 
-```html
+```
         {% for task in tasks%}
             <tr>
                 <td>{{ task.content }}</td>
@@ -332,7 +332,7 @@ def delete(id):
 21. Add update template `update.html`
 (pretty much copied from `index.html` with the table removed)
 
-```html
+```
 {% extends 'base.html' %}
 
 {% block head %}
@@ -376,7 +376,7 @@ def update(id):
 ```
 
 23. Update the update form
-```html
+```
     <form actions="/update/{{ task.id }}" method="POST">
         <input type="text" name="content" id="content" value="{{ task.content }}">
         <input type="submit" value="Update">
@@ -385,7 +385,7 @@ def update(id):
 
 24. Add `if` statement to `index.html` to account for no tasks
 
-```html
+```
     <h1>Task Master</h1>
     {% if tasks|length < 1 %}
         <h4>There are no tasks. Create one below!</h4>
