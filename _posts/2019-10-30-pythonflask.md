@@ -174,8 +174,11 @@ from datetime import datetime
 12a. Make sure you are still in virtual environment
 ```console
 python3
->> from app import db
->> db.create_all()
+```
+
+```console
+from app import db
+db.create_all()
 ```
 
 13. Add methods to routes 
