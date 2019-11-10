@@ -15,6 +15,9 @@ Using [this!](https://www.youtube.com/watch?v=Z1RJmh_OqeA&t=1325s)
 python3 -m venv v-env
 source v-env/bin/activate
 ```
+
+NOTE: You can exit from the virtualenv using exit command, or by pressing Ctrl+d.
+
 3. Install packages
 
 ```console
