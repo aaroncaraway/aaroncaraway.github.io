@@ -6,6 +6,8 @@ main:
   #   url: /data-science/
   - title: "Python"
     url: /python/
+  - title: "JavaScript"
+    url: /javascript/
   - title: "Projects"
     url: /projects/
   - title: "Starting"
