@@ -89,7 +89,7 @@ classes: wide
 
 - Props is read only
 
-https://codesandbox.io/s/keeper-part-3-starting-mi33o?file=/public/styles.css
+[sandbox](https://codesandbox.io/s/keeper-part-3-starting-mi33o?file=/public/styles.css)
 
 ## 459. Managing a Component Tree Practice
 
