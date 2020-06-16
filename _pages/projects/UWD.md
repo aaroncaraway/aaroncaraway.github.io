@@ -73,7 +73,7 @@ classes: wide
 
 ## Section 33: React.js
 
-[OUTLINE]({{ site.baseurl }}{% link pages/projects/UWD/section33_React.md %})
+<!-- [OUTLINE]({{ site.baseurl }}{% link pages/projects/UWD/section33_React.md %}) -->
 
 ## Section 34: Bonus Module: Ask Angela Anything
 
