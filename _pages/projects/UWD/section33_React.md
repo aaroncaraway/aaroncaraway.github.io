@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "UWD: Section 33, React"
+permalink: /pages/projects/UWD/section33
 tags: UWD
 classes: wide
 ---
