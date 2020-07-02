@@ -45,13 +45,30 @@ alert(
 
 ## 116. Challenge: Changing Casing in Text
 
+```javascript
+formattedName =
+  name.slice(0, 1).toUpperCase() + name.slice(1, name.length).toLowerCase();
+```
+
 ## 117. Challenge: Changing String Casing Solution
 
 ## 118. Basic Arithmetic and the Modulo Operator in Javascript
 
+```javascript
+dogAge = prompt("How old is your dog?")
+humanAge = (dogAge -1 2) * 4 + 21
+alert(humanAge)
+```
+
 ## 119. Increment and Decrement Expressions
 
-Quiz 3: Javascript Numbers Quiz
+```javascript
+var x = 5;
+x++; //6
+x--; //4
+
+x += 3; //8
+```
 
 ## 120. Functions Part 1: Creating and Calling Functions
 
