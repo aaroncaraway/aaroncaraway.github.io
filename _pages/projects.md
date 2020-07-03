@@ -5,8 +5,8 @@ permalink: /projects/
 
 # CURRENT:
 
-- UWD [UWD]({{ site.baseurl }}{% link pages/UWD %})
-- UMRE [UMRE]({{ site.baseurl }}{% link pages/UMRE %})
+- UWD [UWD](https://aaroncaraway.github.io/pages/UWD)
+- UMRE [UMRE](https://aaroncaraway.github.io/pages/UMRE)
 
 # UNSCHOOLING
 
