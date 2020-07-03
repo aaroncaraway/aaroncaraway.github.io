@@ -3,6 +3,11 @@ layout: archive
 permalink: /projects/
 ---
 
+# CURRENT:
+
+- UWD [UWD]({{ site.baseurl }}{% link pages/UWD %})
+- UMRE [UMRE]({{ site.baseurl }}{% link pages/UMRE %})
+
 # UNSCHOOLING
 
 1. EDX: Stats [github](https://github.com/aaroncaraway/edxstats)
@@ -13,8 +18,8 @@ Cool things I've made go here
 
 # IN PROGRESS
 
-1. Tic Tac Toe 
-2. Browser Journal 
+1. Tic Tac Toe
+2. Browser Journal
 
 # "DONE"
 
