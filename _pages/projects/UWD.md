@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "UWD"
+permalink: /pages/UWD
 tags: UWD
 classes: wide
 ---
