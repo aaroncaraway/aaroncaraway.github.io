@@ -105,4 +105,44 @@ export default Toggler;
 
 ## 250. The useEffect Hook
 
+#### INCORRECT
+
+```javascript
+useEffect(async () => {
+  const response = await axios.get(
+    `https://swapi.co/api/films/${selectedMovie}`
+  );
+});
+```
+
+#### CORRECT
+
+Effect callbacks are synchronous to prevent race conditions. Put the async function inside:
+
+```javascript
+useEffect(() => {
+  async function fetchData() {
+    // You can await here
+    const response = await MyAPI.getData(someId);
+    // ...
+  }
+  fetchData();
+}, [someId]); // Or [] if effect doesn't need props or state
+```
+
 ## 251. Fetching Data w/ the useEffect Hook
+
+```javascript
+useEffect(() => {
+  async function getData() {
+    const response = await axios.get(
+      `https://swapi.dev/api/films/${selectedMovie}/`
+    );
+    setMovie(response.data);
+    console.log(response);
+  }
+  getData();
+}, [selectedMovie]);
+```
+
+- NOTE: The second argument (here it's just `[selectedMovie]`) can be any number of things (in array form) that, when updated, should call useEffect
