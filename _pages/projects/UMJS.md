@@ -325,6 +325,182 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 ## Section 27: Design a Custom Database
 
+### 360. Data Storage
+
+We need to STORE information somewhere.
+We need it to be PERSISTENT
+
+### 361. Different Data Modeling Approaches
+
+### 362. Implementing the Users Repository
+
+METHODS USED:
+
+- fs.asscessSync
+- fs.writeFileSync
+
+NOTE: We are NOT allowed to have async code inside a `constructor` (This is one of the only times using fs.\_\_Sync functions is OK)
+
+GOAL: Create & Implement a Users repository
+
+1. make folder
+2. make users.js file
+3. make class
+4. test class
+5. put constructor
+6. add try catch with fs.acscess and fswriteFile
+
+### 363. Opening the Repo Data File
+
+1. Open the file
+2. Read the contents
+3. Parse the Contents
+4. Return the parsed data
+
+### 364. Small Refactor
+
+```javascript
+// BEFORE
+  async getAll() {
+    const contents = await fs.promises.readFile(this.filename, {
+      encoding: "utf8",
+    });
+
+    const data = await JSON.parse(contents);
+    return data;
+  }
+// AFTER
+  async getAll() {
+    return JSON.parse(
+      await fs.promises.readFile(this.filename, {
+        encoding: "utf8",
+      })
+    );
+  }
+
+```
+
+### 365. Saving Records
+
+1. make create function
+2. use writefile
+3. with attrs for attributes
+4. test it by adding file before
+
+```javascript
+const fs = require("fs");
+
+class UsersRepository {
+  constructor(filename) {
+    if (!filename) {
+      throw new Error("Creating a repository requires a filename");
+    }
+
+    this.filename = filename;
+    try {
+      fs.accessSync(this.filename);
+    } catch (err) {
+      fs.writeFileSync(this.filename, "[]");
+    }
+  }
+
+  async getAll() {
+    return JSON.parse(
+      await fs.promises.readFile(this.filename, {
+        encoding: "utf8",
+      })
+    );
+  }
+
+  async create(attrs) {
+    const records = await this.getAll();
+    records.push(attrs);
+
+    await fs.promises.writeFile(this.filename, JSON.stringify(records));
+  }
+}
+
+const test = async () => {
+  const repo = new UsersRepository("users.json");
+
+  await repo.create({ email: "test@test.com", password: "password" });
+
+  const users = await repo.getAll();
+
+  console.log(users);
+};
+
+test();
+```
+
+NOTE: it is `accessSync` not `accessFileSync` (this was overwriting my values and giving me major errors)
+
+### 366. Better JSON Formatting
+
+```javascript
+// JSON.stringify(data, FUNCTION, SPACES)
+JSON.stringify(records, null, 2);
+```
+
+### 367. Random ID Generation
+
+PROBLEM: We don't have unique IDs!
+
+SOLUTION: create a RandomID method
+
+### 368. Finding By Id
+
+use find
+get a user id from user.json
+
+### 369. Deleting Records
+
+use filter
+
+### 370. Updating Records
+
+### 371. Adding Filtering Logic
+
+### 372. Exporting an Instance
+
+```javascript
+// potentially buggy
+module.exports = UsersRepository;
+// less buggy for our purposes
+module.exports = new UsersRepository("users.json");
+```
+
+CLEANING UP AND REMOVING TESTS!
+
+```javascript
+// const test = async () => {
+//   const repo = new UsersRepository("users.json");
+//   //   TESTING CREATE + GET ALL
+//   //   await repo.create({ email: "catmom@gmail", password: "ilovecats" });
+//   //   const users = await repo.getAll();
+//   //   console.log(users);
+
+//   //  TESTING GETONE
+//   //   const user = await repo.getOne("fbdeba1c");
+//   //   console.log(user);
+
+//   //  TESTING DELETE
+//   //   await repo.delete("2675571a");
+
+//   // TESTING UPDATE
+//   //   await repo.create({ email: "turtlemom@gmail" });
+//   //   await repo.update("e72f6a67", { password: "iloveturtles" });
+//   //  TESTING GETONEBY
+
+//   const user = await repo.getOneBy({ email: "turtlemom@gmail" });
+//   console.log(user);
+// };
+
+// test();
+```
+
+### 373. Signup Validation Logic
+
 ## Section 28: Production-Grade Authentication
 
 ## Section 29: Structuring Javascript Projects
