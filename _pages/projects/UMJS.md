@@ -501,9 +501,186 @@ CLEANING UP AND REMOVING TESTS!
 
 ### 373. Signup Validation Logic
 
+1. Add usersRepo and require
+2. destructure the req to get all the things
+3. await getOneBy `await usersRepo.getOneBy({email})`
+4. add async
+
 ## Section 28: Production-Grade Authentication
 
+- Hit log in and submitting the form just like above
+- The BROWSER is going to collect information from the FORM
+- It is going to SEND that information to the SERVER via a POST REQUEST
+
+NOW, we can look at the `session` in NETWORK and look at the `RESPONSE HEADERS`
+
+### 374. Cookie Based Authentication
+
+### 375. Creating User Records
+
+1. create user in user repo
+   1. `await usersRepo.create({ email, password})`
+   2. RETURN addrs from create
+2. store id of that user and store it inside the users cookie
+   1. Managing cookies is hard and so we are going to use another library
+   2. npm install cookie-session
+
+- before `await userRepo.create({email, password}`
+- )
+
+### 376. Fetching a Session
+
+1. require cookiesession (its middleweare so we need to....)
+2. `app.use(cookieSession({ keys:['sdlfkjsdflskjdf']}))`
+3. `req.session` is an object from cookie-session
+4. req.sesion.userId = user.id;
+
+[BUG WITH NODEMON REFRESHING USERS.JSON](https://stackoverflow.com/questions/24120004/nodemon-exclusion-of-files)
+
+Fixed by adding below to `package.json`:
+
+```javascript
+  "nodemonConfig": {
+    "ignore": [
+      "users.json"
+    ]
+  }
+```
+
+### 377. Signing Out a User
+
+1. add /signin
+2. add /signout
+3. copy form from signin
+
+### 378. Signing In
+
+1. get email and password from req.body
+2. take email check to see if email already exists via getOneBy()
+3.
+
+### 379. Hashing Passwords
+
+PROBLEM: passwords aren't secured. Doesn't matter that this is a small app because people reuse passwords!
+
+SOLUTION: Hashing algorithm
+
+### 380. Salting Passwords
+
+PROBLEM: Rainbow table attacks!!
+
+SOLUTION: Salting!
+
+### 381. Salting + Hashing Passwords
+
+- crypto.randomBytes
+- crypto.scrypt
+- utils promisify
+
+salt = crypto.randomBytes(8).toString('hex)
+scrypt(attrs.password, salt, 64, (err, buff) => {
+const hashed = buff.toString('hex')
+})
+
+1. generate salt
+2. generate hashed password
+3. save new hased password as record
+4. return the record
+
+### 382. Comparing Hashed Passwords
+
+1. async comparePasswords(saved, supplied)
+2. create new method
+3. destructure
+4. return
+5. profit
+
+### 383. Testing the Full Flow
+
+1. update return of scrypt to reflect that it returns a buffer
+
 ## Section 29: Structuring Javascript Projects
+
+### 384. Project Structure
+
+### 385. Structure Refactor
+
+1. make new file for auth routes in routes/admin/auth.js
+2. migrate all auth routes to new file
+3. confirm we are requiring things we need (usersRepo)
+4. hook new file into express with `router`
+5. replace all occourance of `app` with `router`
+6. export router
+7. back in index.js, below the middlewear, get the export we just made
+
+THINGS I FORGOT
+
+module.exports = router;
+
+### 386. HTML Templating Functions
+
+1. views > admin > auth > sign in & sign up
+2. modeule. exports = ({req} => { return `our form`})
+3. import singupTemplate
+4. res.send(signupTemplate({req}))
+
+### 387. HTML Reuse with Layouts
+
+PROBLEM: So much of this is not DRY
+
+SOLUTION: Layout file!
+
+### 388. Building a Layout File
+
+GOAL: reuse of html elements
+
+admin > layout.js
+
+### 389. Adding Better Form Validation
+
+express-validator
+pass an array to second argument
+
+### 390. Validation vs Sanitization
+
+destructure the one function we care about
+const {check} = require('express-validator')
+
+validator.js is being used by express-validator
+
+### 391. Receiving Validation Output
+
+### 392. Adding Custom Validators
+
+express-validator checking password confirmation checking if email is in use
+
+### 393. Extracting Validation Chains
+
+### 394. Displaying Error Messages
+
+### 395. Validation Around Sign In
+
+### 396. Password Validation
+
+### 397. Template Helper Functions
+
+### 398. Adding Some Styling
+
+### 399. Exposing Public Directories
+
+### 400. Next Steps
+
+### 401. Product Routes
+
+### 402. The Products Repository
+
+### 403. Code Reuse with Classes
+
+### 404. Creating the Products Repository
+
+### 405. Building the Product Creation Form
+
+### 406. Some Quick Validation
 
 ## Section 30: Image and File Upload
 
