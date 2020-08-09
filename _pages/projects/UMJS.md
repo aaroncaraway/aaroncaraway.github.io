@@ -658,7 +658,13 @@ express-validator checking password confirmation checking if email is in use
 
 ### 394. Displaying Error Messages
 
+const getError in validators
+
 ### 395. Validation Around Sign In
+
+inSIGNIN
+checkemail
+checkpassword
 
 ### 396. Password Validation
 
@@ -668,23 +674,380 @@ express-validator checking password confirmation checking if email is in use
 
 ### 399. Exposing Public Directories
 
+public folder!
+public >> css
+
+Make folder available by this!!
+
+`app.use(express.static('public'))`
+
 ### 400. Next Steps
 
 ### 401. Product Routes
 
+/admin/products
+
+/admin/products/new
+
+router.get('/'
+
+require productsRouter
+
+1. Build new file `products.js`
+2. like `admin.js`
+3. Add two routes above
+4. require it back inside our main express file
+
 ### 402. The Products Repository
+
+OBJECT ORIENTED APPROACH
+
+Users AND products EXTEND the Product CLASS!!
+
+Repo.js
+
+ALL methods to be shared
+
+class Repository
+Pastefrom constructor to bottom
+
+Remove `create` and `comparePasswords`
+
+add fs and crypto
+
+Require in rhe repository and extends Repository
+means we are go
+
+_EXTENDS_
+
+Means "take a look at that class repository and all the different motheds that have been assigned to it and we can copy and paste them into the body of our class
+
+EXTENDS essentially means that we are copying and pasting all the methods from (whatever we are extending) to (whereever we are usign the extend)
+
+add a generic async CREATE method
+
+1. Create new file repository.js
+2. Remove all except `create` and `change password` from user repo
+3. Add new create method to repository,js
 
 ### 403. Code Reuse with Classes
 
 ### 404. Creating the Products Repository
 
+productsrepo extends repo
+
+1. create new products.js
+2. have it extend repo
+3. go into routes
+4. require the products repo inside the products route
+
 ### 405. Building the Product Creation Form
+
+views >> admin >> products >> new.js
+
+const layout = require layout
+
+const get error = require helpers
+
+module.exports = ({ errors }) => {
+return layout({ content: ``})
+}
+
+productsNewTemplate
+
+res.send inside /new
+productsNewTemplate({})
+
+1. Create new `new.js` page
+2. require layout and get error
+3. return content in layout
+4. inside prouct routes, grab that new template
 
 ### 406. Some Quick Validation
 
+Require title
+.trim()
+.isLength({ min: 5, max: 40 })
+
+Require price
+.trim()
+.toFloat()
+.isFloat()
+
+from products, require validators
+
+Now make a post request handlersecond argument is array with validators and then req and res and res .
+
+validationResult from express-validator
+
 ## Section 30: Image and File Upload
 
+### 407. Exploring Image Upload
+
+add withMessage()
+
+### 408. Understanding Mutli-Part Forms
+
+**_IMPORTANT_**
+
+How do you send an image in a form!?
+
+`form method='POST' enctype="multipart/form-data"`
+
+### 409. Accessing the Uploaded File
+
+`npm install multer`
+
+### 410. [Optional] Different Methods of Image Storage
+
+[OMG SERIOUSLY BEST IMAGE VIDEO EVER](https://www.udemy.com/course/javascript-beginners-complete-tutorial/learn/lecture/17007522#overview)
+
+### 411. Saving the Image
+
+1. buffer.toString()
+2. `const image = req.file.buffer.toString("base64");`
+3. add to product json file using product repo
+
+### 412. A Subtle Middleware Bug
+
+Middlewares operate in a very specific order! We need to swap them to deal with this bug
+
+```javascript
+// BEFORE
+router.post(
+  "/admin/products/new",
+  [requireTitle, requirePrice],
+  upload.single("image"),
+  async (req, res) => {...
+
+// AFTER
+
+router.post(
+  "/admin/products/new",
+  [requireTitle, requirePrice],
+  upload.single("image"),
+  async (req, res) => {...
+
+router.post(
+  "/admin/products/new",
+  upload.single("image"),
+  [requireTitle, requirePrice],
+  async (req, res) => {
+
+```
+
+### 413. Better Styling
+
+### 414. Reusable Error Handling Middleware
+
+Organize our middlewares!!
+
+routes >> admin >> middlewares.js
+
+```javascript
+module.exports = {
+  handleErrors(templateFunc) {
+    return (req, res, next) => {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.send(templateFunc({ errors }));
+      }
+      next();
+    };
+  },
+};
+```
+
+we MUST return a function because middlewares MUST be a function!!
+
+const { handle errors } top of products js
+
+handleErrors(productsNewTemplate)
+WITHOUT function parens becuase we're passing a REFERENCE to the function
+
+PROBLEM: Our error handling isn't DRY!
+
+SOLUTION: add a DIY `handleErrors()` middleware!
+
+1. create new middlware file and function in routes/admin
+2. Require that function in routes/admin auth and products
+3. update the error-handling requests to use our new handleErrors middleware and delete old code!
+
+### 415. Products Listing
+
+Build a list using a map statement
+for every product we are going to generate an HTML snippet,
+Leading to an array of HTML snippets, which will will join together into a big string
+
+### 416. Redirect on Success Actions
+
+`res.redirect`
+
+login
+signup
+
+### 417. Requiring Authentication
+
+CODE DUPLICATION MEANS MIDDLEWARE!!!
+
+add requireAuth (req, res, next) to middlewares
+
+```javascript
+// BEFORE
+
+router.get("/admin/products", async (req, res) => {
+  if (!req.session.userId) {
+    return res.redirect("/signin");
+  }
+  const products = await productsRepo.getAll();
+  res.send(productsIndexTemplate({ products }));
+});
+
+// AFTER
+
+router.get("/admin/products", requireAuth, async (req, res) => {
+  const products = await productsRepo.getAll();
+  res.send(productsIndexTemplate({ products }));
+});
+```
+
+### 418. Template Update
+
+### 419. Ids in URLs
+
+Add id to edit button on products index
+
+### 420. Receiving URL Params
+
+NOW we need to make our route handler to handle the edit we just created above!
+
+router.get('/admin/products/:id/edit)
+
+:thing means WILDCARD!!
+
+Now get product out of productsrepository using GET ONE
+
+mark function async
+await products Repo.getOne(req.params.id)
+
+### 421. Displaying an Edit Form
+
+1. update edit form to include the "handle errors" function
+2. add a second param to our handle errors function inside product router
+
 ## Section 31: Building a Shopping Cart
+
+### 422. Editing a Product
+
+### 423. Fixing the HandleErrors Middleware
+
+### 424. Edit Form Template
+
+### 425. Deleting Products
+
+Done
+
+### 426. Starting with Seed Data
+
+Done
+
+### 427. User-Facing Products
+
+routes > products
+
+require express
+create new couter
+
+associate route with get to route route
+
+pass in async function
+
+module.exports = router
+
+roots.js
+
+add
+
+### 428. Products Index
+
+### 429. Merging More Styling
+
+### 430. Understanding a Shopping Cart
+
+### 431. Solving Problem #1
+
+PROBLEM: How do we tie cart to non-logged in user?!
+
+SOLUTION: COOKIES!!
+
+### 432. Solving Problem #2
+
+PROBLEM: How do we tie a product to a cart??!
+
+THREE DIFFERENT APPROACHES:
+Bad options first!!
+
+BAD #1 -- add a "Carts" array to each product
+
+BAD #2 -- Carts repository
+
+GOOD!! -- Carts repository that simply points to the product id
+
+### 433. Shopping Cart Boilerplate
+
+1. new routes file >> carts.js
+   1. express
+   2. router
+   3. module.exports = router;
+   4. IN INDEX.JS add carts router to app.use(cartsRouter)
+2. views directory
+3. new repo >> carts.js (same as products to start)
+
+--
+ROUTES
+
+1. Add to cart POST
+2. Show cart GET
+3. delete from cart POST
+
+--
+TODO
+
+1. Add repo
+2. Add router
+3. require router
+4. Add comments
+
+### 434. Submission Options
+
+Now we are going to take the product id and assign it to a cart
+
+1. Take product id, assign to cart stored in our carts repository
+2. we want to find the cart assoiated with this user
+3. Take a look at the aitems array and add a new item or new object that represents the prodcut
+
+TWO SCENARIOS:
+
+1. Firsttime user -- no cart for user!
+   1. Must CREATE CART
+   2. then ADD TO CART
+2. Returning user --
+   1. Must FIND CARD
+   2. then ADD TO CART
+
+### 435. Creating a Cart, One Way or Another
+
+### 436. Adding Items to a Cart
+
+### 437. Displaying Cart Items
+
+### 438. Rendering the List
+
+### 439. Totaling Cart Items
+
+### 440. Removing Cart Items
+
+### 441. Redirect on Remove
 
 ## Section 32: The Basics of Testing
 
