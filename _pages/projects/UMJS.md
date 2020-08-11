@@ -1041,6 +1041,12 @@ TWO SCENARIOS:
 
 ### 437. Displaying Cart Items
 
+router get '/cart'
+
+if not req.session.cartId
+return res.redirect('/')
+const cart = await cartsRepo.getOne(req.session.cartId)
+
 ### 438. Rendering the List
 
 ### 439. Totaling Cart Items
