@@ -1047,11 +1047,32 @@ if not req.session.cartId
 return res.redirect('/')
 const cart = await cartsRepo.getOne(req.session.cartId)
 
+for let item of cart items
+
+need products repo
+product = await products repo.getOne
+
+views carts show.js
+get layout
+take items modeule.exports
+
+renderedItems = items.map((item ))
+
 ### 438. Rendering the List
 
 ### 439. Totaling Cart Items
 
+NOTE!! In reducer functions, it is very important to `return` a value
+
 ### 440. Removing Cart Items
+
+await cartsRepo.getone req.session.cart id
+
+items = cart.items.filter(item =>
+
+await cartsRepo.update(req.session.cartId, { items: items})
+
+res.redirect
 
 ### 441. Redirect on Remove
 

@@ -71,7 +71,7 @@ chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
 
 ### PART 2: The App Script
 
-The Apps Script is slightly more involved if only for reasons of permissions. Before doing anything else
+The Apps Script is slightly more involved if only for reasons of permissions. A good SO for this is [here](https://stackoverflow.com/questions/58719628/how-do-i-create-a-user-managed-cloud-platform-project). Before doing anything else
 
 1. Create a new google sheet
 2. Take note of the sheet's ID (it's the long long string in the url)
@@ -114,3 +114,4 @@ function doPost(e) {
 ### RESOURCES
 
 [reddit](https://www.reddit.com/r/learnjavascript/comments/7g9gdq/chrome_extension_to_write_to_google_sheet/)
+[Google Cloud Proudcts and Permissions](https://stackoverflow.com/questions/58719628/how-do-i-create-a-user-managed-cloud-platform-project)
