@@ -174,3 +174,120 @@ myGraph.printMe();
 ## 219. Remove Vertex Intro
 
 ## 220. Remove Vertex Solution
+
+```javascript
+class Graph {
+  constructor() {
+    this.adjacencyList = {};
+  }
+
+  addVertex(val) {
+    if (!this.adjacencyList[val]) this.adjacencyList[val] = [];
+  }
+
+  addEdge(vert1, vert2) {
+    this.adjacencyList[vert1].push(vert2);
+    this.adjacencyList[vert2].push(vert1);
+  }
+
+  removeEdge(vert1, vert2) {
+    this.adjacencyList[vert1] = this.adjacencyList[vert1].filter(
+      (item) => item !== vert2
+    );
+    this.adjacencyList[vert2] = this.adjacencyList[vert2].filter(
+      (item) => item !== vert1
+    );
+  }
+
+  removeVertex(val) {
+    for (let child of this.adjacencyList[val]) {
+      this.removeEdge(val, child);
+    }
+    delete this.adjacencyList[val];
+  }
+  printMe() {
+    for (let property in this.adjacencyList) {
+      console.log(property, this.adjacencyList[property]);
+    }
+  }
+}
+
+myGraph = new Graph();
+myGraph.addVertex("Tokyo");
+myGraph.addVertex("LA");
+myGraph.addVertex("CO");
+myGraph.addEdge("Tokyo", "LA");
+myGraph.addEdge("LA", "CO");
+myGraph.printMe();
+
+myGraph.removeEdge("Tokyo", "LA");
+myGraph.printMe();
+
+myGraph.addVertex("NJ");
+myGraph.addVertex("FL");
+myGraph.addVertex("SF");
+myGraph.addEdge("SF", "LA");
+myGraph.addEdge("CO", "NJ");
+myGraph.addEdge("FL", "NJ");
+myGraph.addEdge("FL", "LA");
+myGraph.printMe();
+
+myGraph.removeVertex("LA");
+myGraph.printMe();
+```
+
+```python
+class Graph:
+    def __init__(self):
+        self.adjacencyList = {}
+
+    def addVertex(self, val):
+        self.adjacencyList[val] = []
+
+    def addEdge(self, vert1, vert2):
+#         self.adjacencyList[vert1] = self.adjacencyList[vert1] + [vert2]
+#         self.adjacencyList[vert2] = self.adjacencyList[vert2] + [vert1]
+#         self.adjacencyList[vert1] += [vert2]
+#         self.adjacencyList[vert2] += [vert1]
+        self.adjacencyList[vert1].append(vert2)
+        self.adjacencyList[vert2].append(vert1)
+
+    def removeEdge(self, vert1, vert2):
+        self.adjacencyList[vert1] = [item for item in self.adjacencyList[vert1] if item != vert2]
+        self.adjacencyList[vert2] = [item for item in self.adjacencyList[vert2] if item != vert1]
+
+    def removeVertex(self, val):
+        children = self.adjacencyList[val]
+        for child in children:
+            self.removeEdge(val, child)
+        del self.adjacencyList[val]
+#         print(self.adjacencyList[val])
+
+    def print_me(self):
+        for k,v in self.adjacencyList.items():
+            print(k,v)
+
+
+myGraph = Graph()
+myGraph.addVertex('Tokyo')
+myGraph.addVertex('LA')
+myGraph.addVertex('CO')
+myGraph.addEdge('Tokyo', 'LA')
+myGraph.addEdge('LA', 'CO')
+myGraph.print_me()
+
+myGraph.removeEdge('Tokyo', 'LA')
+myGraph.print_me()
+
+myGraph.addVertex('NJ')
+myGraph.addVertex('FL')
+myGraph.addVertex('SF')
+myGraph.addEdge('SF', 'LA')
+myGraph.addEdge('CO', 'NJ')
+myGraph.addEdge('FL', 'NJ')
+myGraph.addEdge('FL', 'LA')
+myGraph.print_me()
+
+myGraph.removeVertex('LA')
+myGraph.print_me()
+```

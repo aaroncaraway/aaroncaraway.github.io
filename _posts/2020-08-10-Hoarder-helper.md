@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "How to Save URLS to a Google Sheet"
-tags: chrome extensions javascript
+tags: chrome extensions javascript howto
 permalink: /projects/hoarder-helper
 classes: wide
 ---

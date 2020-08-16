@@ -46,6 +46,22 @@ classes: wide
 
 ## Section 19: Express.js with Node.js
 
+Most commonly used. "Extended: true" means we can pass nested objects
+
+```javascript
+app.use(bodyParser.urlencoded({ extended: true }));
+```
+
+All together now:
+
+```javascript
+const express = require("express");
+const bodyParser = require("body-parser");
+
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+```
+
 ## Section 20: APIs - Application Programming Interfaces
 
 ## Section 21: Git, Github and Version Control

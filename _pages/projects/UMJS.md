@@ -1078,6 +1078,8 @@ res.redirect
 
 ## Section 32: The Basics of Testing
 
+Use assert.strictEqual
+
 ## Section 33: Building a Testing Framework From Scratch
 
 ## Section 34: Bonus!
