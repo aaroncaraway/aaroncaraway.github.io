@@ -56,6 +56,192 @@ classes: wide
 
 ## Section 21: Application Design Patterns
 
+### 221. Application Overview
+
+### 222. Starter Kit Setup
+
+#### PLAN OF ATTACK
+
+1. Set up "boiler plate"
+2. Call out challenging parts of the app
+3. Start project and actually write the code!
+
+### 223. Big Challenges
+
+#### BIG CHALLENGES (& possible solutions)
+
+1. Where do we get movies?! 
+2. Build an autocomplete widget from scratch
+3. Styling! 
+
+
+#### APIS
+* INDEX results (a list of records)
+* SHOW results (full set of attributes about that record)
+
+### 224. Fetching Movie Data
+
+GOAL: Get a few movies from OMDb
+
+1. Get API key
+2. modify index.js to include a fetchData() method
+
+
+```javascript
+const response = await axios.get("url", {
+  params: {
+  apikey: 'mykey'
+  s: 'avengers'}})
+
+
+```
+
+### 225. Fetching a Single Movie
+
+
+### 226. AutoComplete Widget Design
+
+THINKING IT THROUGH!!
+
+#### Behavior diagram
+
+A. List all the ways a user can interact with this widget
+
+1. Default state
+2. User starts typing...
+3. User finishes typing...
+4. -- we find nothing (display error)
+5. -- we do find something!
+6. User clicks an entry 
+
+
+  
+
+### 227. Searching the API on Input Change
+
+
+### 228. Delaying Search Input
+
+DEBOUNCE!!
+
+```javascript
+setTimeout(() => {console.log('henlo der')}, 1000)
+
+clearTimeout(ID_OF_TIMEOUT)
+```
+
+
+
+### 229. Understanding Debounce
+
+
+### 230. Implementing a Reusable Debounce
+
+
+### 231. Extracting Utility Functions
+
+
+### 232. Awaiting Async Functions
+
+
+### 233. Rendering Movies
+
+
+### 234. Handling Errored Responses
+
+
+### 235. Opening a Menu
+
+
+### 236. Style of Widget Creation
+
+
+### 237. Moving HTML Generation
+
+
+### 238. Quick Note
+
+
+### 239. Repairing References
+
+
+### 240. Handling Broken Images
+
+
+### 241. Automatically Closing the Dropdown
+
+
+### 242. Handling Empty Responses
+
+
+### 243. Handling Movie Selection
+
+
+### 244. Making a Followup Request
+
+
+### 245. Rendering an Expanded Summary
+
+
+### 246. Expanded Statistics
+
+
+### 247. Issues with the Codebase
+
+
+### 248. Making the Autocomplete Reusable
+
+
+### 249. Displaying Multiple Autocompletes
+
+
+### 250. Extracting Rendering Logic
+
+
+### 251. Extracting Selection Logic
+
+
+### 252. Removing Movie References
+
+
+### 253. Consuming a Different Source of Data
+
+
+### 254. Refreshed HTML Structure
+
+
+### 255. Avoiding Duplication of Config
+
+
+### 256. Hiding the Tutorial
+
+
+### 257. Showing Two Summaries
+
+
+### 258. When to Compare?
+
+
+### 259. How to Compare?
+
+
+### 260. Extracting Statistic Values
+
+
+### 261. Parsing Number of Awards
+
+
+### 262. Applying Parsed Properties
+
+
+### 263. Updating Styles
+
+
+### 264. Small Bug Fix
+
+
+### 265. App Wrapup
+
 ## Section 22: Javascript with the Canvas API
 
 ## Section 23: Make a Secret-Message Sharing App
