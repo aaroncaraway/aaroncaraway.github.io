@@ -71,3 +71,8 @@ javascript inside the class
         return result;
     }
 ```
+
+Depth first ITERATIVELY involves pushing onto a stack.
+
+Additionally, we figured out how to actually step through code using the chrome debugger!!
+(Highlight the line to run and do the run key command)

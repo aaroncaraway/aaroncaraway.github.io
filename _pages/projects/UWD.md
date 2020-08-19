@@ -68,6 +68,14 @@ TODO:
 
 kanye.rest
 
+JOKE API
+`https://sv443.net/jokeapi/v2/joke/Pun?blacklistFlags=nsfw&type=single`
+
+### 257: Api auth and postman
+
+1. Sign up for API key at openweather
+2. Look at the structure of the API call
+
 ## Section 21: Git, Github and Version Control
 
 ## Section 22: EJS
