@@ -76,6 +76,67 @@ JOKE API
 1. Sign up for API key at openweather
 2. Look at the structure of the API call
 
+http://api.openweathermap.org/data/2.5/weather?q=London&appid=933d7d672525d0d55611b4587b398adb
+
+### Making GET requests with Node HTTP module
+
+1. Create new weather app
+2. `touch index.html app.js`
+3. `npm init`
+4. `npm i express`
+5. open in an editor
+6. build out app.js
+   1. require express
+   2. app=express()
+   3. app.listen(3000, function(){ callback})
+   4. app.get('/', function)
+
+#### ERRORS I GOT
+
+`SyntaxError: Cannot use import statement outside a module`
+
+FIXED
+
+```javascript
+// import express from "express";
+// import https from "https";
+const express = require("express");
+const https = require("https");
+```
+
+also had to add
+
+```javascript
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
+
+to our start scripts. But really, this should be nodemon.
+
+#### TINY EXAMPLE OF API REQUEST USING JUST EXPRESS AND NODE HTTPS MODULE
+
+```javascript
+const express = require("express");
+const https = require("https");
+
+const app = express();
+
+app.get("/", (req, res) => {
+  const url =
+    "https://api.openweathermap.org/data/2.5/weather?q=Los Angeles&appid=933d7d672525d0d55611b4587b398adb&units=Imperial";
+  https.get(url, (response) => {
+    console.log(response);
+  });
+  res.send("HERE WE ARE!");
+});
+
+app.listen(3030, () => {
+  console.log("listening on port 3030");
+});
+```
+
 ## Section 21: Git, Github and Version Control
 
 ## Section 22: EJS

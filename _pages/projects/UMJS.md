@@ -70,14 +70,14 @@ classes: wide
 
 #### BIG CHALLENGES (& possible solutions)
 
-1. Where do we get movies?! 
+1. Where do we get movies?!
 2. Build an autocomplete widget from scratch
-3. Styling! 
-
+3. Styling!
 
 #### APIS
-* INDEX results (a list of records)
-* SHOW results (full set of attributes about that record)
+
+- INDEX results (a list of records)
+- SHOW results (full set of attributes about that record)
 
 ### 224. Fetching Movie Data
 
@@ -85,7 +85,6 @@ GOAL: Get a few movies from OMDb
 
 1. Get API key
 2. modify index.js to include a fetchData() method
-
 
 ```javascript
 const response = await axios.get("url", {
@@ -97,7 +96,6 @@ const response = await axios.get("url", {
 ```
 
 ### 225. Fetching a Single Movie
-
 
 ### 226. AutoComplete Widget Design
 
@@ -112,133 +110,314 @@ A. List all the ways a user can interact with this widget
 3. User finishes typing...
 4. -- we find nothing (display error)
 5. -- we do find something!
-6. User clicks an entry 
-
-
-  
+6. User clicks an entry
 
 ### 227. Searching the API on Input Change
-
 
 ### 228. Delaying Search Input
 
 DEBOUNCE!!
 
 ```javascript
-setTimeout(() => {console.log('henlo der')}, 1000)
+setTimeout(() => {
+  console.log("henlo der");
+}, 1000);
 
-clearTimeout(ID_OF_TIMEOUT)
+clearTimeout(ID_OF_TIMEOUT);
 ```
 
+REFACTOR
 
+const onInput
+
+Pass onInput into EventListener
+
+NOW we can add logic to call onInput
+
+1. Move fetchData out
+2. Wrap that in setTimeout
+3. Profit?
+
+#### DIY DEBOUNCE!!!!
+
+```javascript
+let timeoutId;
+const sendInput = (event) => {
+  if (timeoutId) {
+    clearTimeout(timeoutId);
+  }
+  timeoutId = setTimeout(() => {
+    fetchData(event.target.value);
+  }, 500);
+};
+
+input.addEventListener("input", sendInput);
+```
 
 ### 229. Understanding Debounce
 
+PROBLEM:
+
+We will frequently need to `debounce` things
+
+SOLUTION:
+
+Make a reusable function!
+
+```javascript
+const debounce = (func) => {
+  let timeoutId;
+  return () => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => {
+      func();
+    }, 500);
+  };
+};
+```
+
+PROBLEM:
+
+What happens when we need to pass something to `func` like `event.target.value`?
+
+SOLUTION:
+
+`func.apply(null, args)` !!
+
+```javascript
+const debounce = (func) => {
+  let timeoutId;
+  return (...args) => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => {
+      func.apply(null, args);
+    }, 500);
+  };
+};
+```
 
 ### 230. Implementing a Reusable Debounce
 
-
 ### 231. Extracting Utility Functions
 
+make utils.js
+require it before index.js on html
 
 ### 232. Awaiting Async Functions
 
+response.data.Search
 
 ### 233. Rendering Movies
 
+don't forget to add double quotes to img src
+
+document query selector #target appendChild
 
 ### 234. Handling Errored Responses
 
-
 ### 235. Opening a Menu
 
+bulma.io
+
+div dropdown is-active
+dropdown-menu
+dropdown-content
+dropdown-item
 
 ### 236. Style of Widget Creation
 
-
 ### 237. Moving HTML Generation
 
+TL; DR: We want reusable widgets (components)
+This is hard when we de-couple html and javascript. Solution? Coupling the html and javascript
+
+PROBLEM: We don't want to write the same code over and over again!
+
+SOLUTION: move the html creation into the javascript file so we have reusable "widtets" (components)
+
+Is HEADER going to be reused within the app? No? Well, then it can live in the HTML file.
+Is INPUT going to be reused within the app? Yes? Well then, it should be put into its own little "widget" (component)
+
+- JAVASCRIPT HEAVY Reusable widgets!!
+
+WHAT DO WE WANT:
+
+- Reusable widgets!
+
+WHEN DO WE WANT THEM!?
+
+- NOW!
+
+BEFORE
+
+```javascript
+<div class="container">
+  <div class="dropdown is-active">
+    <input
+      id="movieSearch"
+      name="searchTerm"
+      placeholder="Search for a movie!"
+    />
+    <div class="dropdown-menu">
+      <div class="dropdown-content">
+        <a class="dropdown-item">Movie 1</a>
+        <a class="dropdown-item">2</a>
+        <a class="dropdown-item">3</a>
+        <a class="dropdown-item">4</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="target"></div>
+</div>
+```
+
+AFTER
+
+index.html
+
+```javascript
+<div class="container">
+  <div class="autocomplete"></div>
+</div>
+```
+
+`index.js`
+
+```javascript
+const root = document.querySelector(".autocomplete");
+
+root.innerHTML = `
+  <div class="dropdown is-active">
+  <input
+    id="movieSearch"
+    name="searchTerm"
+    placeholder="Search for a movie!"
+  />
+  <div class="dropdown-menu">
+    <div class="dropdown-content">
+      <a class="dropdown-item">Movie 1</a>
+      <a class="dropdown-item">2</a>
+      <a class="dropdown-item">3</a>
+      <a class="dropdown-item">55555</a>
+    </div>
+  </div>
+  </div>
+
+  <div id="target"></div>
+`;
+```
+
+add selectors for dropdown and
+resultsWrapper for results
 
 ### 238. Quick Note
 
-
 ### 239. Repairing References
 
+Add is-active
+anchor
 
-### 240. Handling Broken Images
+### 240. Handlincg Broken Images
 
+1. Return empty string if image is NA
+2. clear resultsWrapper when we search for movie
 
 ### 241. Automatically Closing the Dropdown
 
+1. add event listener for clicks
+2. `dropdown.remove('is-active')`
 
 ### 242. Handling Empty Responses
 
-
 ### 243. Handling Movie Selection
 
+update text and close dropdown
+
+option.addEventListener('click, event => {
+
+  <!-- removeis active -->
+  <!-- update input -->
+
+input.value = movie.Title;
+})
+
+NOTES: We want to:
+
+1. add an event listener to our options
+2. once clicked, we want to
+   1. close dropdown
+   2. replace input text
 
 ### 244. Making a Followup Request
 
+1. Need to do a request when user clicks on our "option"
+2. PROBLEM: that file is so big
+3. SOLUTION: helper function -- onMovieSelect(movie-user-just-clicked-on)
+4. make function `onMovieSelect`
+5. make that solution async
+6. copy params from first api resuest movie.imdbID
 
 ### 245. Rendering an Expanded Summary
 
+1. new helper function! with so much html!!
+2. add an element with id of `summary` to index.html
+3. get that newly created element and add all the html we just made from our helper function!
 
 ### 246. Expanded Statistics
 
-
 ### 247. Issues with the Codebase
 
+PROBLEM: Current code wouldn't work if we wanted to reuse this for, say, recipes!! (recipes won't have a POSTER)
 
 ### 248. Making the Autocomplete Reusable
 
-
 ### 249. Displaying Multiple Autocompletes
 
+GOAL: display multiple autocompletes
+
+1. create autocomplete.js
+2. add autocomplete.js to index.html
 
 ### 250. Extracting Rendering Logic
 
+1. remove the test code from 249 in index.html
+2. ^ from index.js
+3. add `renderOptions` to our `createAutoComplete` function
+4. pass that to our autocomplete.js
+5. test this by adding a date to our movie dropdown!
 
 ### 251. Extracting Selection Logic
 
-
 ### 252. Removing Movie References
-
 
 ### 253. Consuming a Different Source of Data
 
-
 ### 254. Refreshed HTML Structure
-
 
 ### 255. Avoiding Duplication of Config
 
-
 ### 256. Hiding the Tutorial
-
 
 ### 257. Showing Two Summaries
 
-
 ### 258. When to Compare?
-
 
 ### 259. How to Compare?
 
-
 ### 260. Extracting Statistic Values
-
 
 ### 261. Parsing Number of Awards
 
-
 ### 262. Applying Parsed Properties
-
 
 ### 263. Updating Styles
 
-
 ### 264. Small Bug Fix
-
 
 ### 265. App Wrapup
 
