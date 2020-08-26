@@ -76,3 +76,92 @@ Depth first ITERATIVELY involves pushing onto a stack.
 
 Additionally, we figured out how to actually step through code using the chrome debugger!!
 (Highlight the line to run and do the run key command)
+
+### DFS Iterative V1 (my attempt without watching him first)
+
+```javascript
+    depthFirstSearch_iterative(start){
+        let todo = [start]
+        let visited = {}
+        let result = []
+        let current;
+        let neighbors;
+        while (todo.length !== 0) {
+            console.log(todo)
+            current = todo.pop()
+            if (!visited[current]){
+                visited[current] = true
+
+                result.push(current)
+            }
+            neighbors = this.adjacencyList[current]
+            for (let i = 0; i < neighbors.length; i++){
+                const neighbor = neighbors[i]
+                if (!visited[neighbor]){
+                    console.log(neighbors[i])
+                    todo.push(neighbors[i])
+                }
+            }
+
+        }
+        console.log('RESULT', result)
+        return result
+    }
+
+```
+
+### DFS Iterative V2 (also no looking, but after video)
+
+```javascript
+       depthFirstSearch_iterative(start){
+           let stack = [start]
+           let visited = {}
+           let results = [start]
+           let current;
+
+           visited[start] = true
+           while(stack.length){
+                current = stack.pop()
+                this.adjacencyList[current].forEach((vert) => {
+                    if(visited[vert]) {console.log('visited!')}
+                    else {
+                        visited[vert] = true
+                        results.push(vert)
+                        stack.push(vert)
+                    }
+                    console.log(vert)
+                })
+           }
+           return results
+       }
+
+```
+
+### DFS Iterative V3 (after video again)
+
+```javascript
+// V3 After watching video again
+           depthFirstSearch_iterative(start) {
+               let stack = [start]
+               let results = []
+               let visited = {}
+               let current;
+
+                visited[start] = true
+//                while there is still something in the stack
+               while(stack.length){
+//                    pop off what's in the stack and get his/her neighbors
+                    current = stack.pop()
+                    results.push(current)
+
+                    this.adjacencyList[current].forEach(neighbor => {
+//                         if the neighbor has not been visited, visit and add their neighbors
+                        if(!visited[neighbor]){
+                            visited[neighbor] = true
+                            stack.push(neighbor)
+                        }
+                    })
+               }
+               return results
+           }
+```

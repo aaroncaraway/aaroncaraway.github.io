@@ -393,7 +393,13 @@ GOAL: display multiple autocompletes
 
 ### 251. Extracting Selection Logic
 
+1. Add onOptionSelect() to config
+2. Add inputValue to config
+
 ### 252. Removing Movie References
+
+Pass Fetch Data to Config function
+change all 'movies' to 'items' and 'movie' to 'item'
 
 ### 253. Consuming a Different Source of Data
 
@@ -405,21 +411,41 @@ GOAL: display multiple autocompletes
 
 ### 257. Showing Two Summaries
 
+add "side" to onMovieSelect
+GOAL: "Run comparison" in console log
+
 ### 258. When to Compare?
 
 ### 259. How to Compare?
+
+Update MovieDetail function
+
+1. Turn things into an easy-to-compare value!
+2. dollars = movieDetails.BoxOffice. replace
+3. parseInt
+4. parseFloat
 
 ### 260. Extracting Statistic Values
 
 ### 261. Parsing Number of Awards
 
+`if (isNaN(value)){}`
+
 ### 262. Applying Parsed Properties
+
+add data-value properties
 
 ### 263. Updating Styles
 
 ### 264. Small Bug Fix
 
 ### 265. App Wrapup
+
+MOST IMPORTANT:
+
+- Create _REUSABLE_ Autocomplete widget!!
+- Connect our html and js into ONE PLACE!
+- Run comparison using data-value
 
 ## Section 22: Javascript with the Canvas API
 
