@@ -137,6 +137,23 @@ app.listen(3030, () => {
 });
 ```
 
+### 260. How to Parse JSON
+
+```javascript
+res.on("data", (d) => {
+  console.log(d);
+});
+```
+
+NOW, to actually read it...
+
+```javascript
+res.on("data", (d) => {
+  const parsedData = JSON.parse(d);
+  console.log(parsedData);
+});
+```
+
 ## Section 21: Git, Github and Version Control
 
 ## Section 22: EJS

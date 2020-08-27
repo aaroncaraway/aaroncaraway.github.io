@@ -54,6 +54,189 @@ classes: wide
 
 ## Section 20: Drawing Animations
 
+### 195. Welcome to Part 2!
+
+### 196. App Overview
+
+### 197. Project Setup
+
+1. make new dir
+2. Make `index.html` and `index.js` boilerplate
+
+TINIEST POSSIBLE "APP"
+
+index.html
+
+```javascript
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script src="index.js"></script>
+  </body>
+</html>
+```
+
+index.js
+
+```javascript
+console.log("SHHH!! I LOVE CATS!");
+```
+
+### 198. Event-Based Architecture
+
+What does our program do?
+
+- displays a timer
+- Shows an animated border around the timer
+
+TL;DR -- using callbacks to say "timer started!", "timer ticked" etc
+
+BONUS: this can be REUSED when waiting for web requests
+
+### 199. Class-Based Implementation
+
+Class TIMER!!
+With Constructor: constructor(durationInput, startButton, pauseButton)
+With methods:
+start()
+pause()
+setDuration()
+tick()
+
+### 200. Binding Events in a Class
+
+Tiniest class!!
+
+```javascript
+class Timer {
+  constructor(message) {
+    console.log(message);
+  }
+}
+
+myTimer = new Timer("i love cats!!");
+```
+
+1. take three inputs
+2. instantiate them in constructor
+3. add event listener inside constructor
+4. make a `start()` method
+
+### 201. Reminder on 'This'
+
+### 202. Determining the Value of 'This'
+
+`bind`, `call`, and `apply` are BUILD IN FUNCTIONS that belong to ALL functions inside of JavaScript
+
+The first argument to all three is going to OVERRIDE the mythical `this` that we want (NOT the imposter `this` we get from console logging this within the start() function within the Timer class)
+
+### 203. Solving the 'This' Issue
+
+#### Option 1: Arrow function!
+
+```javascript
+start = () => {
+  console.log("TIMER HAS BEEN STARTED!!");
+};
+```
+
+#### Option 2:
+
+```javascript
+class Timer {
+  constructor(durationInput, startButton, pauseButton) {
+    this.durationInput = durationInput;
+    this.startButton = startButton;
+    this.pauseButton = pauseButton;
+
+    this.startButton.addEventListener("click", this.start.bind(this));
+    this.pauseButton.addEventListener("click", this.pause.bind(this));
+  }
+  .
+  .
+  .
+  start(){}
+  pause(){}
+}
+```
+
+NOTE: we will be using Option 1
+
+### 204. Starting and Pausing the Timer
+
+#### Starting the timer!!
+
+1. add `tick()` method to timer class
+2. use `setInterval` function, that's part of the js language
+3. PROBLEM: it doesn't start ticking right away!
+4. SOLUTION: call tick() before setInterval, like so:
+
+```javascript
+start = () => {
+  this.tick();
+  setInterval(this.tick, 1000);
+};
+
+tick = () => {
+  console.log("tick!");
+};
+```
+
+NOTE: don't be a dooface and do `setInterval(this.tick(),1000)` and try calling the function like that
+
+---
+
+#### Pausing the timer!!
+
+TL;DR:
+`clearInterval(timerID)`
+
+BUT WAIT!
+
+PROBLEM:
+
+How will we get that `timerID` from the other Timer class function, `start`!
+
+SOLUTION:
+
+Assign timer to the `this` variable so we can access it EVERYWHERE, like so
+
+```javascript
+```
+
+### 205. Where to Store Data?
+
+### 206. DOM-Centric Approach
+
+### 207. Getters and Setters
+
+### 208. Stopping the Timer
+
+### 209. Notifying the Outside World
+
+### 210. OnTick and OnComplete
+
+### 211. Extracting Timer Code
+
+### 212. Introducing SVG's
+
+### 213. Rules of SVG's
+
+### 214. Advanced Circle Properties
+
+### 215. The Secret to the Animation
+
+### 216. First Pass on the Animation
+
+### 217. Smoothing the Animation
+
+### 218. Adjusting by an Even Interval
+
+### 219. Using Icons
+
+### 220. Styling and Wrapup
+
 ## Section 21: Application Design Patterns
 
 ### 221. Application Overview
