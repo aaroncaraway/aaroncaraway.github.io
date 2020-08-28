@@ -207,13 +207,63 @@ Assign timer to the `this` variable so we can access it EVERYWHERE, like so
 
 ### 205. Where to Store Data?
 
+#### OPTION 1: Inside our JS code
+
+#### OPTION 2: Inside the DOM
+
 ### 206. DOM-Centric Approach
 
+```javascript
+tick = () => {
+  const timeRemaining = parseFloat(this.durationInput.value);
+  this.durationInput.value = timeRemaining - 1;
+};
+```
+
 ### 207. Getters and Setters
+
+Let's reduce code reuse!
+
+`getTime()` & `setTime()`
+
+#### FIRST WAY:
+
+```javascript
+getTime(){
+  return parseFloat(this.durationInput.value)
+}
+
+setTime(time){
+  this.durationInput.value = time
+}
+```
+
+#### SECOND WAY (with getters and setters!):
+
+```javascript
+tick = () => {
+  this.timeRemaining = this.timeRemaining - 1
+};
+
+get timeRemaining() {
+  return parseFloat(this.durationInput.value);
+}
+
+set timeRemaining(time) {
+  this.durationInput.value = time
+}
+
+```
 
 ### 208. Stopping the Timer
 
 ### 209. Notifying the Outside World
+
+1. pass callbacks to our `new Timer(.... pauseButton, { callbacks here!!})`
+2. (thinking about the actual rendering of the border) I only care about:
+   1. onStart
+   2. onTick
+   3. onComplete
 
 ### 210. OnTick and OnComplete
 
