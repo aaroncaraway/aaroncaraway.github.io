@@ -165,3 +165,38 @@ Additionally, we figured out how to actually step through code using the chrome 
                return results
            }
 ```
+
+### BFS (attempt on 8/29/20)
+
+```javascript
+    bfs(start) {
+//         remove from front of queue with queue.shift()
+        var queue = [start]
+        var results = []
+        var visited = {}
+        var current;
+        var neighbors;
+
+//         visited[start] = true
+        while(queue.length){
+            current = queue.shift()
+            if(!visited[current]){
+                visited[current] = true
+                results.push(current)
+                neighbors = this.adjacencyList[current]
+                neighbors.forEach((neighbor) => {
+                    if(!visited[neighbor]){
+                        queue.push(neighbor)
+                        console.log(current, queue)
+                    }
+                })
+
+            }
+
+        }
+        return results
+
+
+    }
+
+```

@@ -269,11 +269,93 @@ set timeRemaining(time) {
 
 ### 211. Extracting Timer Code
 
+PROBLEM:
+
+so much code in this one file!!
+
+SOLUTION:
+
+pull it out into its own js file!!
+
 ### 212. Introducing SVG's
+
+1. SVGs are HTML elements!
+2. Add a simple circle to index.html like so:
+
+```javascript
+  <body>
+    <svg width="200", height="200">
+        <circle r="20", cx="30", cy="30">
+    </svg>
+  </body>
+```
 
 ### 213. Rules of SVG's
 
+- svgs need width and height
+- they draw a canvas
+- "origin" is starting point and that is upper left point of box
+- (meaning we will rarely use negative numbers -- at least not in our current app)
+- you can add other elements to svg elements (like we did with circle)
+- more than just circles!! also square, also polygons, also paths that have an arbitrary direction
+- We can also have MANY smaller shapes inside the SVG
+
+#### More about our circle:
+
+`r = radius`
+`cx` and `cy` stand for "centerpoint x and centerpoint y"
+meaning where the center of the circle will be placed inside the SVG canvas we created enCIRCLING (lololol) our shape
+
 ### 214. Advanced Circle Properties
+
+This makes a red circle with a blue border!
+
+```javascript
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <svg width="200", height="200">
+        <circle
+        r="90",
+        cx="100",
+        cy="100",
+        fill="red",
+        stroke="blue",
+        stroke-width="10">
+    </svg>
+    <input id="duration" value="30" />
+    <button id="start">Start</button>
+    <button id="pause">Pause</button>
+    <script src="timer.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
+
+```
+
+all we have to do to get a see-through circle is change
+`fill="transparent"`
+
+#### THINGS WE NEED:
+
+- `stroke-dasharray`
+
+This takes two arguments but only really needs one (the first one)
+
+- `stroke-dasharray="10"` means "give me a dash of 10 pixels every 10 pixels"
+- `stroke-dasharray="10 5"` means "give me a dash of 10 pixels every 5 pixels"
+
+#### CIRCLE REVIEW:
+
+Perimeter = 2*PI*r
+
+#### THINGS WE NEED CONT:
+
+- `stroke-dashoffset="x"`
+- (this subtracks from what we already have as a gap -- makes the gap we have larger by x)
+- `dashoffset` set to negative goes CLOCKWISE!!
+- `transform=rorate(-90,100,100)`
 
 ### 215. The Secret to the Animation
 

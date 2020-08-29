@@ -139,6 +139,12 @@ app.listen(3030, () => {
 
 ### 260. How to Parse JSON
 
+IMPORTANT!!
+
+To get readable data: `JSON.parse(data)`
+
+To turn object into string: `JSON.stringify(data)`
+
 ```javascript
 res.on("data", (d) => {
   console.log(d);
