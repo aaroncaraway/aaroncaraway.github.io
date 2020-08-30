@@ -160,6 +160,12 @@ res.on("data", (d) => {
 });
 ```
 
+NOTE:
+
+We can only have one `res.send` in any of the `app.get('/'....)`
+
+HOWEVER, we can have as many `res.write` s as we want!
+
 ## Section 21: Git, Github and Version Control
 
 ## Section 22: EJS

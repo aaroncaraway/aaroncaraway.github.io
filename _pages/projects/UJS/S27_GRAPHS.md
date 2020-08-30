@@ -200,3 +200,29 @@ Additionally, we figured out how to actually step through code using the chrome 
     }
 
 ```
+
+### BFS (attempt on 8/30/20) -- after watching the video explanation
+
+```javascript
+        bfs(start){
+            const queue = [start]
+            const results = []
+            const visited = {}
+            let current;
+
+            visited[start] = true
+            while(queue.length){
+                current = queue.shift()
+                results.push(current)
+
+                this.adjacencyList[current].forEach((neighbor) => {
+                    if(!visited[neighbor]){
+                        visited[neighbor] = true
+                        queue.push(neighbor)
+                    }
+                })
+            }
+            return results
+        }
+
+```

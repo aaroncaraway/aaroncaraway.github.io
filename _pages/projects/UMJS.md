@@ -363,11 +363,41 @@ Perimeter = 2*PI*r
 
 ### 217. Smoothing the Animation
 
+PROBLEM:
+
+Our animation is blocky!!
+
+SOLUTION:
+
+- Update how frequently we are "ticking" by updating `setInterval` to run every 50ms instead of every 1 sec
+- Update how we are calculating time remaining (it should be `-0.05` now instead of every 1)
+- Update the `-50` to simply `-1` for the dashoffset pixels
+
+PROBLEM:
+
+Now our numbers have all these 9s in the text input!!
+
+SOLUTION:
+
+`toFixed(2)`
+
 ### 218. Adjusting by an Even Interval
+
+offset = (perimeter \* timeRemaining) / totalDuration - perimeter
+
+1. timer.js -- pass this.timeRemaining to onTick
+2. pass this.timeRemaining to onStart because GASP this is the DURATION at on start!!
+3.
 
 ### 219. Using Icons
 
+1. cdnjs --> font awesome
+2. link rel="stylesheet, href="what we just googled"
+3.
+
 ### 220. Styling and Wrapup
+
+## ==============================================================
 
 ## Section 21: Application Design Patterns
 
