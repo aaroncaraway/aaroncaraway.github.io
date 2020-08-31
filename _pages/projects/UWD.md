@@ -166,6 +166,25 @@ We can only have one `res.send` in any of the `app.get('/'....)`
 
 HOWEVER, we can have as many `res.write` s as we want!
 
+### MAILCHIMP API!
+
+Challenge
+
+1. mkdir
+2. touch app.js signup.html success.html failure.html
+3. npm init
+4. npm i express request body-parser nodemon
+5. update package json to include `"start":"nodemon app.js"`
+6. add require statements to app.js
+
+---
+
+1. make signup page from bootstrap
+2. require bootstrap cdn
+3. change the input fields
+4. update the input fields css
+5. Get this to show up when we hit `/`
+
 ## Section 21: Git, Github and Version Control
 
 ## Section 22: EJS

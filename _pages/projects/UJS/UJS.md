@@ -55,6 +55,20 @@ classes: wide
 
 ## Section 24: Binary Heaps -- STARTED
 
+### Building a Priority Queue
+
+WHAT IT IS: A data structure where each element has a priority
+
+Think of it like -- an emergency room queue. Guy with gunshot is going to be treated before scratchy throat
+
+#### NAIVE VERSION:
+
+Use a list to store all elements and iterate over that list to find element with lowest priority
+
+#### NOW, WITH HEAPS!
+
+Time complexity for insertion and deletion: log N
+
 ## Section 25: Hash Tables -- STARTED
 
 ## Section 26: Graphs -- STARTED
