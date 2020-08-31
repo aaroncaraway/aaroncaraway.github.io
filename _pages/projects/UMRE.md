@@ -182,6 +182,37 @@ CONVENTIONS
 
 ## Section 36: State Management w/ useReducer & useContext
 
+### 282. First useReducer Example
+
+#### ROUND 2 (8/31/20)
+
+[CODE SANDBOX](https://codesandbox.io/s/umres36282usereducer-vxlwy?file=/src/App.js)
+
+```javascript
+import React from "react";
+import { useReducer } from "react";
+import "./styles.css";
+
+const reduceShareOptions = (state, action) => {
+  if (action.type === "INCREMENT") return { runtime: state.runtime + 1 };
+  if (action.type === "DECREMENT") return { runtime: state.runtime - 1 };
+  if (action.type === "INCREMENT_BY_5") return { runtime: state.runtime + 5 };
+};
+export default function App() {
+  const [state, dispatch] = useReducer(reduceShareOptions, { runtime: 3 });
+  return (
+    <div className="App">
+      <h1> RUNTIME IS {state.runtime} </h1>
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>subtract</button>
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>add</button>
+      <button onClick={() => dispatch({ type: "INCREMENT_BY_5" })}>
+        add 5
+      </button>
+    </div>
+  );
+}
+```
+
 ## Section 37: Next JS
 
 ## Section 38: Next: Fetching & Server API

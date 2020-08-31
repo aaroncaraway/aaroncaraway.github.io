@@ -185,6 +185,18 @@ Challenge
 4. update the input fields css
 5. Get this to show up when we hit `/`
 
+### 265. Posting Data to Mailchimp's Servers via their API
+
+GOAL: go to mailchimp.com and see subscriber
+
+- JSON.stringify(data
+- Replace the X in the url
+- check curl request for the url
+- const options including method
+- auth: "sldkfjsdlfkj:myApiKey"
+- console.log JSON.parse
+- request.write(request )
+
 ## Section 21: Git, Github and Version Control
 
 ## Section 22: EJS
