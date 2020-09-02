@@ -55,6 +55,32 @@ classes: wide
 
 ## Section 24: Binary Heaps -- STARTED
 
+### Extract Max
+
+Starting ...
+
+```javascript
+
+    extractMax() {
+        const max = this.values[0]
+        const end = this.values.pop()
+        this.values[0] = end
+        this.sinkDown()
+        return max;
+    }
+    sinkDown(){
+        let idx = 0;
+        const length = this.values.length;
+        const element = this.values[0]
+        console.log('sinking down')
+        while(true) {
+            let leftChildIdx = 2 * idx + 1;
+            let rightChild = 2 * idx + 2
+        }
+
+    }
+```
+
 ### Building a Priority Queue
 
 WHAT IT IS: A data structure where each element has a priority
