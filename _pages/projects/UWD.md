@@ -197,6 +197,10 @@ GOAL: go to mailchimp.com and see subscriber
 - console.log JSON.parse
 - request.write(request )
 
+#### How to set Heroku Environment Variables
+
+[heroku config:set API_KEY=sdlfjsdlfksjdlfkj](https://devcenter.heroku.com/articles/config-vars)
+
 ## Section 21: Git, Github and Version Control
 
 ## Section 22: EJS

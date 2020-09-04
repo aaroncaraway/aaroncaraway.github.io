@@ -35,7 +35,21 @@ Tried ngrok
 
 ### 10. Overview of React Components
 
+- GOAL OF A REACT COMPONENT: Show some amount of content to the user
+- FOUR PARTS TO A REACT COMPONENT:
+  - imports (libraries etc)
+  - a function that returns some jsx
+  - some styling
+  - an export
+
+1. make ComponentsScreen.js inside src/screens
+2. import { Text, StyleSheet } from 'react-native'
+3. create `const ComponentsScreen = () => { <Text></Text>}`
+4. create styling `const styles = StyleSheet.create({})`
+
 ### 11. Showing a Custom Component
+
+1. Import component `
 
 ### 12. Common Questions and Answers
 
