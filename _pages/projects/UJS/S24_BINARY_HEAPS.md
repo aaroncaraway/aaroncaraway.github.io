@@ -6,6 +6,29 @@ permalink: /projects/UJS/S24_BINARY_HEAPS/
 classes: wide
 ---
 
+## 9-16-20
+
+Breaking down `bubbleUp`
+
+```javascript
+function bubbleUp(array) {
+  console.log(array);
+}
+
+//          1
+
+//     3        4
+
+//  12  11     6   ___
+
+// Let's pretend to add 2!
+
+array = [1, 3, 4, 12, 11, 6];
+bubbleUp(array);
+```
+
+## 9-15-20
+
 ```javascript
 class Node {
   constructor(val, priority) {
