@@ -95,6 +95,47 @@ Use a list to store all elements and iterate over that list to find element with
 
 Time complexity for insertion and deletion: log N
 
+---
+
+Building this with Python
+
+TIL: I do not need the `__str__` method in my Node Class
+
+```python
+class Node:
+    def __init__(self, val, priority):
+        self.val = val
+        self.priority = priority
+
+#     def __str__(self):
+#         return [self.val, self.priority]
+#         return str(self.val)
+
+class PriorityQueue:
+    def __init__(self):
+        self.values = []
+
+    def insert(self, val, priority):
+        new_node = Node(val, priority)
+        self.values.append(new_node)
+        self.bubbleUp()
+
+    def extractMin(self):
+        min_val = self.values.pop()
+        self.sinkDown()
+
+    def bubbleUp(self):
+        print('bubbling up')
+
+    def sinkDown(self):
+        print('sink down')
+
+    def display(self):
+#         print(self.values)
+        for i in self.values:
+            print(i.val)
+```
+
 ## Section 25: Hash Tables -- STARTED
 
 ## Section 26: Graphs -- STARTED
