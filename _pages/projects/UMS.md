@@ -61,6 +61,9 @@ comments by post ID
 
 ### 16. React Project Setup
 
+1. Delete all files inside src
+2. GOAL: "Blog App" display on react app
+
 ### 17. Building Post Submission
 
 ### 18. Handling CORS Errors

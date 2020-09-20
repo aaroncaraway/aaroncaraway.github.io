@@ -53,7 +53,20 @@ Tried ngrok
 
 ### 12. Common Questions and Answers
 
+What's a PRIMITIVE React Element?
+
+- Text
+- View
+- Image
+- Button
+
 ### 13. Rules of JSX
+
+- props is short for properties and this is how we customize the JSX objects
+- variables are inside {} in JSX
+- We can assign a JSX element to a variable and use that within another JSX element
+
+NOTE: we cannot show a JavaScript object INSIDE a JSX element
 
 ### 14. One Common Error
 
