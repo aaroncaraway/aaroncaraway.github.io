@@ -66,6 +66,10 @@ comments by post ID
 
 ### 17. Building Post Submission
 
+1. PostCreate
+2. Add Boostrap CSS CDN to anywhere inside the head
+3. Add event handler
+
 ### 18. Handling CORS Errors
 
 ### 19. Fetching and Rendering Posts

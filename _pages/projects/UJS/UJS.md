@@ -148,6 +148,8 @@ class PriorityQueue:
 
 ## Section 28: Dijkstra's Algorithm!
 
+[GOING BACK TO HEAPS & PRIORITY QUEUES](https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/8344818#overview)
+
 ## Section 29: Dynamic Programming -- STARTED
 
 ## Section 30: The Wild West
