@@ -205,6 +205,51 @@ GOAL: go to mailchimp.com and see subscriber
 
 ## Section 22: EJS
 
+[DOCS](https://github.com/mde/ejs/wiki/Using-EJS-with-Express)
+
+todolist-v1
+touch index.html
+app.js
+npm init
+npm i express bodyparser
+
+make template for express and body-parser
+
+NOTE! We can only use `res.send()` once HOWEVER, we can use res.write as many times as we want!!
+
+`res.write('thing')`
+`res.write('thing')`
+`res.send()`
+
+we also have
+`res.sendFile(__dirname + '/myfile.html')`
+
+### TO USE EJS:
+
+1. create a new folder called `views`
+2. create `list.ejs`
+3. Add this to `app.js`
+
+```javascript
+const app = express();
+app.use("view engine", "ejs");
+app.get("/", (req, res) => {
+  res.render("list", { kindOfDay: day });
+});
+```
+
+CHALLENGE:
+
+1. Make new app with pages
+2. Make boilerplate express docs
+3. Add EJS
+4. Add variable
+
+### TO INCLUDE JS:
+
+- use ejs "Scriplette" tag [Docs HERE](https://ejs.co/#docs)
+- can ONLY use "control flow" (if/else) statements within `<% scriplette %>`
+
 ## Section 23: Boss Level Challenge 3 - Blog Website
 
 ## Section 24: Databases

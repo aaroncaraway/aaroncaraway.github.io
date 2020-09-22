@@ -74,6 +74,8 @@ comments by post ID
 
 ### 19. Fetching and Rendering Posts
 
+1. make thing
+
 ### 20. Creating Comments
 
 ### 21. Displaying Comments
