@@ -59,6 +59,8 @@ classes: wide
 
 Starting ...
 
+THIS HAS INFINITE WHILE LOOP DO NOT RUN
+
 ```javascript
 
     extractMax() {

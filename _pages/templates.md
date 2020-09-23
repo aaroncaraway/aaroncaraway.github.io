@@ -7,7 +7,7 @@ classes: wide
 
 ## EXPRESS
 
-### BASIC
+### BASIC (urlencoding for FORMS - ala UWD)
 
 ```javascript
 const express = require("express");
@@ -25,7 +25,7 @@ app.listen(4040, () => {
 });
 ```
 
-### BASIC PLUS
+### BASIC PLUS (WITH JSON -- ala UMJS)
 
 ```javascript
 const express = require("express");
@@ -65,3 +65,84 @@ app.listen(4000, () => {
 `res.send()`
 `res.write()`
 `res.sendFile(__dirname)`
+
+## EXPRESS + EJS
+
+### -- app.js
+
+```javascript
+//jshint esversion:6
+const express = require("express");
+const bodyParser = require("body-parser");
+
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.set("view engine", "ejs");
+
+const dayWords = {
+  0: "Sunday",
+  1: "Monday",
+  2: "Tuesday",
+  3: "Wednesday",
+  4: "Thursday",
+  5: "Friday",
+  6: "Saturday",
+};
+
+app.get("/", (req, res) => {
+  const today = new Date();
+  const day = today.getDay();
+
+  res.render("list", { currentDay: dayWords[day] });
+});
+
+app.post("/", (req, res) => {
+  res.send(req.body.greeting);
+});
+
+app.listen(4040, () => {
+  console.log("currently listening on port 4040");
+});
+```
+
+### -- views/list.ejs
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TODO V1</title>
+  </head>
+  <body>
+    <h1>Today is <%= currentDay %></h1>
+    <form action="/" method="post">
+      <input type="text" name="greeting" />
+      <button type="submit">SUBMIT</button>
+    </form>
+  </body>
+</html>
+```
+
+### -- package.json
+
+```json
+{
+  "name": "uwd-todo-v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
+```

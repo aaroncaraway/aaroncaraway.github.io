@@ -92,17 +92,42 @@ comments by post ID
 
 ### 27. A Basic Event Bus Implementation
 
+1. create new event-bus app
+2. install express nodemon axios
+
 ### 28. Emitting Events
 
+inside posts
+make the post request async
+add axios inside it
+
+await axios.post(our endpoint, our event object)
+
+our event object:
+
+type: 'PostCreated', data: {id, title}
+
 ### 29. Emitting Comment Creation Events
+
+type CommentCreated
+data: {
+id: commentId,
+content
+postId: req.params.id
+}
 
 ### 30. Receiving Events
 
 ### 31. Creating the Data Query Service
 
+We want a single service that connects posts and commnets!
+
 ### 32. Parsing Incoming Events
 
 ### 33. Using the Query Service
+
+1. add query
+2. i express cors
 
 ### 34. Adding a Simple Feature
 
