@@ -120,14 +120,20 @@ postId: req.params.id
 
 ### 31. Creating the Data Query Service
 
-We want a single service that connects posts and commnets!
+GOAL: We want a single service that connects posts and comments!
+
+1. add query
+2. i express cors nodemon
+
+GOAL 2:
+
+1. console log inside query from event bus
+2. (event bus no more errors)
+3. console log inside event bus as a response from query`
 
 ### 32. Parsing Incoming Events
 
 ### 33. Using the Query Service
-
-1. add query
-2. i express cors
 
 ### 34. Adding a Simple Feature
 
@@ -139,7 +145,25 @@ We want a single service that connects posts and commnets!
 
 ### 38. Creating the Moderation Service
 
+1. make boilerplate
+2. on comment submit send to pending and send to moderation
+3. on moderation finish, send back to comment
+4. comment updates to queryservice
+
+---
+
+1. moderation
+2. axios express nodemon
+3. index.js
+4. require statements
+5.
+
 ### 39. Adding Comment Moderation
+
+add property ststus: pending
+add status to comment creation
+add to query status
+persist status
 
 ### 40. Handling Moderation
 
