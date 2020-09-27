@@ -146,3 +146,19 @@ app.listen(4040, () => {
   }
 }
 ```
+
+### -- For URN
+
+```javascript
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+
+const ListScreen = () => {
+  const name = "Obi Wan";
+  return <Text>List Screen</Text>;
+};
+
+const styles = StyleSheet.create({});
+
+export default ListScreen;
+```
