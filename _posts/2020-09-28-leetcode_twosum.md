@@ -4,6 +4,8 @@ title: "Leetcode 9.28.20"
 tags: leetcode
 ---
 
+NOTE: kdo acct
+
 ```python
 class Solution(object):
     def twoSum(self, nums, target):
