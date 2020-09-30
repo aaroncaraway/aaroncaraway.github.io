@@ -223,6 +223,8 @@ persist status
 
 ## Section 24: [Appendix A] - Basics of Docker
 
+### 500 -- What is a container?
+
 ## Section 25: [Appendix B] - Basics of Typescript
 
 ## Section 26: Bonus!

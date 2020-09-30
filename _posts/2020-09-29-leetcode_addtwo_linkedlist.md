@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Leetcode 9.28.20"
+title: "Leetcode 9.29.20"
 tags: leetcode
 ---
 
