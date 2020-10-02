@@ -11,6 +11,7 @@ classes: wide
 
 ```javascript
 const express = require("express");
+const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
@@ -20,8 +21,9 @@ app.get("/", (req, res) => {
   res.send("hello there!");
 });
 
-app.listen(4040, () => {
-  console.log("currently listening on port 4040");
+let port = 4242;
+app.listen(port, () => {
+  console.log(`currently listening on port ${port}`);
 });
 ```
 
