@@ -3,6 +3,18 @@ layout: archive
 permalink: /python/
 ---
 
+## Nested Looping
+
+```python
+        for i, (a,b) in enumerate(intervals):
+            for j, (c,d) in enumerate(intervals):
+                if (i!=j) and (c<=a) and (b<=d):
+                    remaining -= 1
+                    break
+        return remaining
+
+```
+
 ## Adding to Dictionary
 
 ```python
