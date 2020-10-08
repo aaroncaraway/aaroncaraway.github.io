@@ -264,6 +264,43 @@ CHALLENGE:
 
 ## Section 29: Deploying Your Web Application
 
+MongoDB Atlas
+
+1. Create a cluster
+2. Create a user (note un and pw)
+3. security - network access - whitelist allow access from anywhere
+4. cluster connect
+
+mongo "mongodb+srv://cluster0.lived.mongodb.net/test" --username myusername
+
+`show dbs`
+
+`use test`
+
+`show collects`
+
+`db.test.findall`
+
+### 376. Deploying an App with a Database to Heroku
+
+Procfile
+
+`web: node app.js`
+
+it's just instructions
+when on the web, use node to access app.js
+
+Add version of node to package json
+
+```json
+"engines": {
+  "node": "version number"
+}
+```
+
+(to find version)
+`node --version`
+
 ## Section 30: Boss Level Challenge 4 - Blog Website Upgrade
 
 ## Section 31: Build Your Own RESTful API From Scratch
