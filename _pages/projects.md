@@ -3,6 +3,10 @@ layout: archive
 permalink: /projects/
 ---
 
+# ON THE ONLINE:
+
+- Frontend Practice [Social proof](https://aaroncaraway.github.io/fem-socialproof/)
+
 # CURRENT:
 
 - UWD [UWD](https://aaroncaraway.github.io/pages/UWD)
