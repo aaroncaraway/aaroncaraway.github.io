@@ -260,6 +260,26 @@ CHALLENGE:
 
 ## Section 27: Mongoose
 
+### NOTES:
+
+View db/collections:
+`use my_db`
+`show collections`
+
+Find:
+`db.collection-name.find()`
+
+Drop db:
+ `use my_db`
+ `db.dropDatabase()`
+
+ ---
+ Insert MANY THINGS!!
+
+ Insert an ARRAY 
+`NameOfMongooseModel.insertMany()`
+`Person.insertMany()`
+
 ## Section 28: Putting Everything Together
 
 ## Section 29: Deploying Your Web Application
