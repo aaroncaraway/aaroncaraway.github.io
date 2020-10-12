@@ -274,10 +274,10 @@ Drop db:
  `db.dropDatabase()`
 
  ---
- Insert MANY THINGS!!
+### Insert MANY THINGS!!
 
  Insert an ARRAY 
-`NameOfMongooseModel.insertMany()`
+`NameOfMongooseModel.insertMany([array], callback)`
 `Person.insertMany()`
 
 ## Section 28: Putting Everything Together
