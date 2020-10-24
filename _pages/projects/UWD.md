@@ -250,6 +250,34 @@ CHALLENGE:
 - use ejs "Scriplette" tag [Docs HERE](https://ejs.co/#docs)
 - can ONLY use "control flow" (if/else) statements within `<% scriplette %>`
 
+### UNDERSTANDING NODE EXPORTS & MODULES
+
+#### INSIDE MODULE FOLDER
+
+module.export = oneFunction;
+
+module.export.functionOne = oneFunction
+
+module.export.functionTwo = secondFunction
+
+#### INSIDE APP.JS
+
+let howEverWeRequiredIt = require('my_module')
+howEverWeRequiredIt.oneFunction()
+
+
+#### BUT to make everything EVEN MORE SUCCINCT...
+
+module.exports.myFunction = function(){
+  <!-- anonymous function -->
+}
+
+we can make it EVEN SHORTER using just `exports` instead of `module.exports`
+
+we can use `const` for things like Arrays and Objects -- it protects the DATA STRUCTURE not the things inside it (which we CAN change)
+
+We can't REASSIGN the array to a new things or the Object to a new thing, but we CAN change the insides of those things.
+
 ## Section 23: Boss Level Challenge 3 - Blog Website
 
 ## Section 24: Databases
