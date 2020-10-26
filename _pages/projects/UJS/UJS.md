@@ -27,7 +27,7 @@ classes: wide
 
 ## Section 11: Bubble Sort -- STARTED
 
-If we optimze using a "no swap" variable to deal with an almost-sorted list, we have O(N), otherwise we have O(n^2)
+If we optimize using a "no swap" variable to deal with an almost-sorted list, we have O(N), otherwise we have O(n^2)
 
 ## Section 12: Selection Sort
 

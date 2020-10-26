@@ -353,6 +353,19 @@ Add version of node to package json
 
 ## Section 31: Build Your Own RESTful API From Scratch
 
+### RESTFUL VERBS:
+
+GET
+POST
+PUT & PATCH
+DELETE
+
+### RESTFUL + CRUD:
+
+* GET == Read 
+
+
+
 ## Section 32: Authentication & Security
 
 ## Section 33: React.js
