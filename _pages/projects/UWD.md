@@ -286,6 +286,16 @@ We can't REASSIGN the array to a new things or the Object to a new thing, but we
 
 ## Section 26: MongoDB
 
+(10-26-20)
+
+### Installing Mongo on Mac
+
+1. Download from mongodb.com/downloads
+2. Extract folder from downloaded zip
+3. Move the folder to the (hidden) `usr` folder `sudo mv (path to downloaded folder) /usr/local/mongodb`
+4. Add our new location to our PATH variable (vi .bash_profile) and then add `export PATH=$PATH:/usr/local/mongodb/bin` 
+5. Now, create a directory for where mongod will live `mkdir -p /data/db`
+
 ## Section 27: Mongoose
 
 ### NOTES:
@@ -362,8 +372,17 @@ DELETE
 
 ### RESTFUL + CRUD:
 
-* GET == Read 
+(CRUD = Create Read Update Delete)
 
+* GET == Read 
+* POST == Create
+* PUT & PATCH = Update
+* DELETE == Delete
+
+
+Q: What is patch vs put?
+Put updates the ENTIRE object. Patch just updates the part of the object that needs updating. 
+Think of the replacing the entire bike (PUT) vs replacing just the broken part, the tire (PATCH)
 
 
 ## Section 32: Authentication & Security
