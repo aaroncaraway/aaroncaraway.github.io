@@ -384,7 +384,79 @@ Q: What is patch vs put?
 Put updates the ENTIRE object. Patch just updates the part of the object that needs updating. 
 Think of the replacing the entire bike (PUT) vs replacing just the broken part, the tire (PATCH)
 
+### USING POSTMAN
 
+Body >> urlencoded (or whatever we're using with bodyparser )
+
+
+
+```javascript
+const express = require("express");
+const bodyParser = require("body-parser");
+const ejs = require("ejs");
+const mongoose = require("mongoose");
+
+const app = express();
+
+app.set("view engine", "ejs");
+
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+app.use(express.static("public"));
+
+//TODO
+
+mongoose.connect("mongodb://localhost:27017/wikiDB", { useUnifiedTopology: true, useNewUrlParser: true })
+
+const articleSchema = {
+  title: String,
+  content: String
+};
+
+const Article = mongoose.model("Article", articleSchema)
+
+app.get('/articles', (req, res) => {
+  Article.find({}, (err, results)=> {
+    if(err){
+      res.send(err)
+    } else {
+      res.send(results)
+    }
+    // console.log(results)
+  })
+
+  
+  // Article.find({})
+})
+
+
+app.post('/articles', (req, res) => {
+
+  const newArticle = new Article({
+    title: req.body.title,
+    content: req.body.content
+  })
+
+  newArticle.save(function(err) {
+    if(!err){
+      res.send("Success!")
+    } else {
+      res.send(err)
+    }
+  });
+
+})
+
+
+app.listen(3330, function () {
+  console.log("Server started on port 3330");
+});
+
+
+```
 ## Section 32: Authentication & Security
 
 ## Section 33: React.js
