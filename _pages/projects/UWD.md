@@ -36,6 +36,20 @@ classes: wide
 
 ## Section 14: jQuery
 
+### METHODS WE CAN USE:
+
+`$().addAttribute()`
+`$().addClass()`
+
+`$().css()`
+If one arg is passed, that means we are getting the value
+If second argument is passed, that means we are updating the value
+HOWEVER, we should use `addClass` instead
+
+`$("h1").text('bye)`
+
+`$("button").html("<em>Hey</em>")`
+
 ## Section 15: Boss Level Challenge 2 - The Simon Game
 
 ## Section 16: The Unix Command Line
