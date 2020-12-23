@@ -50,6 +50,43 @@ HOWEVER, we should use `addClass` instead
 
 `$("button").html("<em>Hey</em>")`
 
+#### GET all the hrefs 
+
+`$("a").attr("href")`
+
+
+#### SET all the hrefs 
+ 
+`$("a").attr("href", "www.google.com")`
+
+
+### EVENT LISTENERS WITH JQUERY
+
+```javascript
+// BEFORE
+for (var i=0; i<5; i++){
+  document.querySelectorAll("button")[i].addEventListener("click", function() {
+    document.querySelector("h1").style.color = "purple"
+  })
+}
+
+// AFTER (With JQuery)
+$("button").click(function () {
+  $("h1").css("color", "purple")
+})
+
+```
+
+### NOTE: You can pass any JavaScript Events to "ON" 
+
+see MDN Event Reference
+
+```javascript
+$("h1").on("mouseover", function(){
+  $("h1").css("color", "purple")
+})
+```
+
 ## Section 15: Boss Level Challenge 2 - The Simon Game
 
 ## Section 16: The Unix Command Line
