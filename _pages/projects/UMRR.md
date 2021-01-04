@@ -24,6 +24,52 @@ permalink: /UMRR/
 
 ## Section 5: State in React Components
 
+```javascript
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {lat: null, errorMessage: null}
+
+    window.navigator.geolocation.getCurrentPosition(
+      // success callback
+      position => this.setState({ lat: position.coords.latitude }),
+      // error callback
+      err => this.setState({ errorMessage: err.message})
+    )
+  }
+  render(){
+
+      if (this.state.errorMessage && !this.state.lat) {
+        return(<div> Latitude: {this.state.errorMessage} </div>)
+      }
+
+      if (!this.state.errorMessage && this.state.lat) {
+        return(<div> Error: {this.state.lat} </div>)
+      }
+
+      
+      return(<div> Loading! </div>)
+      
+  }
+}
+
+ReactDOM.render(<App />, document.querySelector("#root"))
+
+```
+
+### THREE THINGS:
+
+Lifecycle methods!
+Component re-renders when state is updated
+
+1. ComponentDidMount (runs once, when component is MOUNTED onto the dom)
+2. ComponentDidUpdate (runs once component re-renders **** AFTER STATE HAS BEEN UPDATED!!)
+3. ComponentWillUnMount
+
 ## Section 6: Understanding Lifecycle Methods
 
 ## Section 7: Handling User Input with Forms and Events
