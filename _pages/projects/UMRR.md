@@ -72,6 +72,13 @@ Component re-renders when state is updated
 
 ## Section 6: Understanding Lifecycle Methods
 
+### 61:
+
+GOAL: Move code from constructor to ComponentDidMount
+
+### 62:
+
+
 ## Section 7: Handling User Input with Forms and Events
 
 ## Section 8: Making API Requests with React
