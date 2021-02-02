@@ -1,8 +1,12 @@
 ---
 layout: single
 permalink: /starting/
-title: "Starting from the Bottom"
+title: 'Starting from the Bottom'
 ---
+
+ESLINT + PRETTIER + HEROKU
+
+[From myself](https://aaroncaraway.github.io/dailylog-11-27-20/)
 
 When using AWS from a new user, don't forget to [create a new access key](https://help.bittitan.com/hc/en-us/articles/115008255268-How-do-I-find-my-AWS-Access-Key-and-Secret-Access-Key-)
 
