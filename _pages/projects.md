@@ -3,6 +3,14 @@ layout: archive
 permalink: /projects/
 ---
 
+## CURRENT:
+
+1. LCPC.com
+2. MammaFesta.com
+3. Caroline Googlesheets
+
+## BACKLOG:
+
 # ON THE ONLINE:
 
 - Frontend Practice [Social proof](https://aaroncaraway.github.io/fem-socialproof/)
@@ -31,3 +39,19 @@ permalink: /projects/
 # "DONE"
 
 1. Lololol nothing is ever done, ya pleb
+
+### OLD PROJECTS:
+
+[Live Oak Co](http://www.liveoakco.com/)
+
+[Cinemagraph landing page](http://www.og.kendraosburn.com/cinemagraph.html)
+
+PRE 2012:
+
+[Lovenotes -- Rails-on-Heroku App](http://lovenotes.herokuapp.com/)
+
+[fun with bubbles](http://www.og.kendraosburn.com/animate_bubbles.html)
+
+[more fun with bubbles](http://www.og.kendraosburn.com/bubbles.html)
+
+[secret message](http://www.og.kendraosburn.com/hello_hover.html)
