@@ -11,6 +11,12 @@ permalink: /projects/
 
 ## BACKLOG:
 
+1. React-reddit-pics
+2. uwd-kentcdodds
+3. ls-react-frontend
+4. janejohnson.wordpress.com
+5. Emergency Taco
+
 # ON THE ONLINE:
 
 - Frontend Practice [Social proof](https://aaroncaraway.github.io/fem-socialproof/)
