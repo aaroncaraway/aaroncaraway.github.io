@@ -5,7 +5,7 @@ permalink: /projects/
 
 ## CURRENT:
 
-1. LCPC.com
+1. LCPC.com (due tomorrow)
 2. MammaFesta.com
 3. Caroline Googlesheets
 
@@ -15,7 +15,7 @@ permalink: /projects/
 2. uwd-kentcdodds
 3. ls-react-frontend
 4. janejohnson.wordpress.com
-5. Emergency Taco
+5. Emergency Taco (under Tiny Llama Studios)
 
 # ON THE ONLINE:
 
