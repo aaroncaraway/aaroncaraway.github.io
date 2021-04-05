@@ -17,6 +17,14 @@ permalink: /projects/
 4. janejohnson.wordpress.com
 5. Emergency Taco (under Tiny Llama Studios)
 
+## Projects tickling the back of my mind
+
+1. react-reddit-pics
+2. cats narrating big lebowski
+3. AWS scraping (twitter jobs scraping?)
+4. twitter bot
+5. Instagram bot
+
 # ON THE ONLINE:
 
 - Frontend Practice [Social proof](https://aaroncaraway.github.io/fem-socialproof/)
